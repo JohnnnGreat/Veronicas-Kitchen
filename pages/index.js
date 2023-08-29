@@ -31,9 +31,10 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [value, setValue] = useState(0);
   const Images = [FoodOne, FoodTwo, FoodThree];
-  let count = 1;
+
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
+    let count = 1;
     const interval = setInterval(() => {
       if (count == 3) count = 0;
       setValue(count);
