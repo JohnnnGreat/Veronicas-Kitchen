@@ -118,12 +118,12 @@ export default function Home() {
       <div className="special">
         <div className="special__wrapper">
           <div className="special__wrapper__header">
-            <h1 c>Today's Special Offer</h1>
+            <h1 c>Today&apos;s Special Offer</h1>
             <p>
               Embark on a journey of culinary bliss with our selection of the
-              day's finest dishes. Indulge in the flavors that reign supreme,
-              crafted with passion and expertise, for an unforgettable dining
-              experience.
+              day&apos;s finest dishes. Indulge in the flavors that reign
+              supreme, crafted with passion and expertise, for an unforgettable
+              dining experience.
             </p>
           </div>
           <div className="special__wrapper__order">
