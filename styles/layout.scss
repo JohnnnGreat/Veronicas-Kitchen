@@ -94,7 +94,8 @@ $max_width: 70rem;
           justify-content: center;
           border: 1px solid grey;
           // display: none;
-          transform: scale(0);
+          transform: scale(0) translateX(100px);
+
           transition: 300ms ease-in;
           z-index: 50;
           box-shadow: 0 0 5px 5px rgba(7, 7, 7, 0.096);
@@ -138,16 +139,25 @@ $max_width: 70rem;
 }
 
 //Footer Section
-
 .footer {
   height: 60vh;
   padding: 3rem 0;
+
+  @media (max-width: 567px) {
+    height: auto;
+    padding: 1rem;
+  }
   &__wrapper {
     max-width: 70rem;
     margin: auto;
     &__first-container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
+
+      @media (max-width: 567px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+      }
 
       .item {
         &__header {
