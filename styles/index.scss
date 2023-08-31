@@ -934,7 +934,7 @@ $heroD_txt_clr: #5c6574;
     }
 
     .form-container {
-      width: 900px;
+      width: 600px;
       margin: auto;
 
       @media (max-width: 567px) {
@@ -961,7 +961,7 @@ $heroD_txt_clr: #5c6574;
 
         .first-container {
           border: 1px solid red;
-          padding: 1.2rem;
+          padding: 1rem;
           display: flex;
           justify-content: space-between;
           cursor: pointer;
@@ -1039,7 +1039,7 @@ $heroD_txt_clr: #5c6574;
         }
         input {
           width: 100%;
-          padding: 1.5rem;
+          padding: 1.1rem;
           outline: none;
           border-radius: 0.7rem;
           border: 1px solid #5c65749f;

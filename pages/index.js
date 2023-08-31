@@ -7,7 +7,7 @@ import FoodThree from "@/public/food_assets/food 3.png";
 import { useEffect, useState } from "react";
 import OrderComponent from "@/components/Orders";
 import WhyUsComponent from "@/components/Why_us";
-import SendMessage from "@/components/sendMessage";
+import SendMessage from "@/components/SendMessage";
 import Subscribe from "@/components/subscribe";
 
 //Special Food Orders

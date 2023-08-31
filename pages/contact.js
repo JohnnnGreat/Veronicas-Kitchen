@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
-import SendMessage from "@/components/sendMessage";
+import SendMessage from "@/components/SendMessage";
 import Subscribe from "@/components/subscribe";
 
 function Contact() {

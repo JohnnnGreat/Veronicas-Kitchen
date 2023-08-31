@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import "remixicon/fonts/remixicon.css";
 import axios from "axios";
 import { useState } from "react";
-import SendMessage from "@/components/sendMessage";
+import SendMessage from "@/components/SendMessage";
 
 function Reservations() {
   const [showList, setShowList] = useState(false);
