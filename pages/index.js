@@ -7,6 +7,8 @@ import FoodThree from "@/public/food_assets/food 3.png";
 import { useEffect, useState } from "react";
 import OrderComponent from "@/components/Orders";
 import WhyUsComponent from "@/components/Why_us";
+import SendMessage from "@/components/sendMessage";
+import Subscribe from "@/components/subscribe";
 
 //Special Food Orders
 import OrderOne from "@/public/special_assets/foodOne.png";
@@ -22,9 +24,6 @@ import ExTwo from "@/public/explore_assets/Frame 8429.png";
 import ExThree from "@/public/explore_assets/Frame 8430.png";
 import ExFour from "@/public/explore_assets/Frame 8431.png";
 import ExFive from "@/public/explore_assets/Frame 8432.png";
-
-//Icons Assets
-import Arrow from "@/public/icons_assets/Vector (2).png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -223,18 +222,8 @@ export default function Home() {
               ></Image>
             </div>
           </div>
-          <div className="exp_btn">
-            <Link className="explore-link" href={"/"}>
-              <p>VIEW MORE IN OUR GALLERY</p>
-              <div className="rounder">
-                {" "}
-                <Image
-                  className="arrow_img"
-                  src={Arrow}
-                  alt="exp-arrow"
-                ></Image>
-              </div>
-            </Link>
+          <div className="explore-container">
+            <SendMessage text="VIEW MORE IN OUR GALLERY" />
           </div>
         </div>
       </div>
@@ -251,21 +240,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="subscribe">
-        <div className="subscribe__wrapper">
-          <div className="subscribe__wrapper__container">
-            <div>
-              <h1 className="subscribe-header">Subscribe to our Newsletter</h1>
-              <div className="subscribe-input-field">
-                <input type="text" placeholder="Enter your email" required />
-                <Link className="sub-cta" href="/subscribe">
-                  Subscribe
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Subscribe />
     </div>
   );
 }

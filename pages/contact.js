@@ -1,5 +1,7 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
+import SendMessage from "@/components/sendMessage";
+import Subscribe from "@/components/subscribe";
 
 function Contact() {
   return (
@@ -16,13 +18,26 @@ function Contact() {
               <form className="contact-form" action="">
                 <input type="text" placeholder="Name" required />
                 <input type="text" placeholder="Email" required />
-                <textarea name="message" cols="30" rows="10"></textarea>
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+
+                <SendMessage text="SEND A MESSAGE" />
               </form>
             </div>
-            <div className="second__contact-details"></div>
+            <div className="second__contact-details">
+              <h1 className="second-header">FOLLOW US</h1>
+              <div className="social-media"></div>
+              <div className="contact-phone">Phone No.: 000 000 0000</div>
+              <div className="contact-email">Email Address: Fill</div>
+            </div>
           </div>
         </div>
       </div>
+      <Subscribe />
     </>
   );
 }

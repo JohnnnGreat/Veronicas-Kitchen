@@ -7,7 +7,47 @@
   box-sizing: border-box;
 }
 
+html {
+  user-select: none;
+  user-zoom: none;
+}
+
 body {
   font-family: "Abhaya Libre", serif;
   background-color: #f6f6f6;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(202, 202, 202);
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(146, 146, 146);
+  transition: 300ms ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 223, 117);
+  border-radius: 20px !important;
+}
+
+// /* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgb(211, 211, 211);
+  height: 2px;
+}
+
+// *::-webkit-scrollbar-thumb {
+//   background-color: var(--secondary);
+//   border-radius: 14px;
+//   border: 3px solid var(--primary);
+// }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary);
 }
