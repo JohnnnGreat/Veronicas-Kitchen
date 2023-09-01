@@ -63,8 +63,6 @@ function Reservations() {
       date,
     };
 
-    console.log(data);
-
     try {
       const response = await fetch("api/contact", {
         method: "POST",
@@ -75,10 +73,12 @@ function Reservations() {
       });
       if (response.ok) {
         setIsSuccess(false);
+        console.log(response);
         if (response.ok == false) message.error("An Error Occured");
       }
     } catch (err) {
       console.log(err);
+      message.error("ee");
     }
   };
   return (

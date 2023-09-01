@@ -13,13 +13,14 @@ export default async function (req, res) {
     });
     const mailData = {
       from: req.body.email,
-      to: "johnossai20@gmail.com",
+      to: "JOHN OSSAI <johnossai20@gmail.com>",
       subject: `Message From ${req.body.name}`,
 
       html: `   <div style="font-family: Poppins, serif">
+      <h1 style="font-weight:300; text-align:center;">Veronicas Kitchen</h1>
       <div style="background-color: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-          <h1 style="color: #333; margin-bottom: 20px;">New Reservation from ${req.body.name}</h1>
+          <h1 style="color: #333; margin-bottom: 20px; font-weight:400;">New Reservation from ${req.body.name}</h1>
           <p style="color: #666;">Details:</p>
           <table style="width: 100%; border-collapse: collapse;">
             <thead>
@@ -47,8 +48,10 @@ export default async function (req, res) {
     };
     try {
       const response = await transporter.sendMail(mailData);
+      console.log(response);
       return res.json({ response: response });
     } catch (error) {
+      console.log(error);
       return res.json({ error: error });
     }
   }
