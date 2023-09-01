@@ -26,9 +26,28 @@ import ExFour from "@/public/explore_assets/Frame 8431.png";
 import ExFive from "@/public/explore_assets/Frame 8432.png";
 import Background from "../public/utils_assets/Testimonial.png";
 
+import Carousel from "react-bootstrap/Carousel";
+// import ExampleCarouselImage from "components/ExampleCarouselImage";
+
+//Swiper Imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
   const [value, setValue] = useState(0);
   const Images = [FoodOne, FoodTwo, FoodThree];
 
@@ -255,13 +274,64 @@ export default function Home() {
             <h1>Discover What Our Ecstatic Customers Have to Say</h1>
           </div>
           <div className="testimonials__wrapper__contents">
-            <div className="testimonials__card">
-              <h1></h1>
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView={1}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              effect={"cube"}
+            >
+              <SwiperSlide className="swiper">
+                <div className="testimonials__card">
+                  <h1>Card One</h1>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="testimonials__card">
+                  <h1>Card One</h1>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="testimonials__card">
+                  <h1>Card One</h1>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="testimonials__card">
+                  <h1>Card One</h1>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>
       <Subscribe />
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel.Item>
+          <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 }

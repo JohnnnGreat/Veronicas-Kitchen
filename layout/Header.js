@@ -22,7 +22,11 @@ const Header = () => {
       <div className="header__wrapper">
         <div className="header_c">
           <div className="header_c__l">
-            <Link style={{ textDecoration: "none" }} href={"/"}>
+            <Link
+              className="header-link"
+              style={{ textDecoration: "none" }}
+              href={"/"}
+            >
               <h1 className="header_c__l__text">VERONICA'S KITCHEN</h1>
             </Link>
           </div>
@@ -43,22 +47,38 @@ const Header = () => {
             ></Image>
             <ul>
               <li>
-                <Link className="nav-link" href="/our-story">
+                <Link
+                  onClick={handleCloseBtn}
+                  className="nav-link"
+                  href="/our-story"
+                >
                   OUR STORY
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" href="/gallery">
+                <Link
+                  onClick={handleCloseBtn}
+                  className="nav-link"
+                  href="/gallery"
+                >
                   GALLERY
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" href="/reservations">
+                <Link
+                  onClick={handleCloseBtn}
+                  className="nav-link"
+                  href="/reservations"
+                >
                   RESERVATIONS
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" href="/contact">
+                <Link
+                  onClick={handleCloseBtn}
+                  className="nav-link"
+                  href="/contact"
+                >
                   CONTACT US
                 </Link>
               </li>

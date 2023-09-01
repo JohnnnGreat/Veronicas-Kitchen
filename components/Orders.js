@@ -21,7 +21,7 @@ function Orders({ price, orderImage, title, desc }) {
         </div>
 
         <div className="btn-orders">
-          <Link className="btn-cta" href="/orders">
+          <Link className="btn-cta" href="/reservations">
             Order Now
           </Link>
         </div>

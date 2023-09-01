@@ -1,4 +1,6 @@
-const Footer = () => {
+import "remixicon/fonts/remixicon.css";
+
+function Footer() {
   return (
     <div className="footer">
       <div className="footer__wrapper">
@@ -35,7 +37,17 @@ const Footer = () => {
           </div>
           <div className="item">
             <h1 className="item__header">Follow Us</h1>
-            <div className="social_media"></div>
+            <div className="social_media">
+              <div>
+                <i class="ri-facebook-fill"></i>
+              </div>
+              <div>
+                <i class="ri-instagram-line"></i>
+              </div>
+              <div>
+                <i class="ri-instagram-line"></i>
+              </div>
+            </div>
           </div>
         </div>
         <div className="footer__wrapper__second-container">
@@ -49,6 +61,6 @@ const Footer = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Footer;

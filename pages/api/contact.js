@@ -1,22 +1,22 @@
 import nodemailer from "nodemailer";
 
 export default async function (req, res) {
-  console.log(req.body);
-  if (req.method === "POST") {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
+  try {
+    if (req.method === "POST") {
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
 
-      auth: {
-        user: "johnossai20@gmail.com",
-        pass: "kblgyogjwalbiwja",
-      },
-    });
-    const mailData = {
-      from: req.body.email,
-      to: "JOHN OSSAI <johnossai20@gmail.com>",
-      subject: `Message From ${req.body.name}`,
+        auth: {
+          user: "johnossai20@gmail.com",
+          pass: "kblgyogjwalbiwja",
+        },
+      });
+      const mailData = {
+        from: req.body.email,
+        to: "JOHN OSSAI <johnossai20@gmail.com>",
+        subject: `Message From ${req.body.name}`,
 
-      html: `   <div style="font-family: Poppins, serif">
+        html: `   <div style="font-family: Poppins, serif">
       <h1 style="font-weight:300; text-align:center;">Veronicas Kitchen</h1>
       <div style="background-color: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
@@ -45,16 +45,15 @@ export default async function (req, res) {
        
       </div>
     </div>`,
-    };
-    try {
-      const response = await transporter.sendMail(mailData);
-      console.log(response);
-      return res.json({ response: response });
-    } catch (error) {
-      console.log(error);
-      return res.json({ error: error });
-    }
-  }
+      };
 
+      await transporter.sendMail(mailData);
+
+      res.status(200).json({ success: true });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, error: "Error sending email" });
+  }
   return res.status(400).json({ message: "Bad Request" });
 }

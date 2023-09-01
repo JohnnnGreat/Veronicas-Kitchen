@@ -8,9 +8,7 @@ import { message } from "antd";
 
 function Reservations() {
   const [showList, setShowList] = useState(false);
-
-  // Data
-  // const [number, setNumber] = useState(2);
+  const [showResponse, setShowResponse] = useState(false);
 
   const [showTime, setShowTime] = useState(false);
 
@@ -71,14 +69,15 @@ function Reservations() {
           "Content-Type": "application/json",
         },
       });
-      if (response.ok) {
-        setIsSuccess(false);
-        console.log(response);
-        if (response.ok == false) message.error("An Error Occured");
+      setIsSuccess(false);
+      if (response.status === 500) {
+        message.error("An error Occured");
+      } else {
+        message.success("Message Sent Successfully");
       }
     } catch (err) {
       console.log(err);
-      message.error("ee");
+      message.error(err);
     }
   };
   return (
@@ -106,7 +105,12 @@ function Reservations() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <input type="date" value={date} onChange={handleDate} />
+              <input
+                type="date"
+                value={date}
+                placeholder="Date"
+                onChange={handleDate}
+              />
 
               <div className="second-container">
                 <div className="first-container" onClick={showOptions}>
@@ -185,6 +189,7 @@ function Reservations() {
                   type="time"
                   className="date"
                   value={time}
+                  placeholder="Time"
                   onChange={handleTime}
                 />
                 {/* <div className="first-container" onClick={showTimeOptions}>

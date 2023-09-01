@@ -73,9 +73,13 @@ $heroD_txt_clr: #5c6574;
 
           .first_cta {
             display: flex;
-
+            gap: 1rem;
             margin-top: 38px;
             column-gap: 1rem;
+
+            @media (max-width: 567px) {
+              flex-wrap: wrap;
+            }
             .cta-btn {
               font-size: 16px;
               width: 100%;
@@ -277,7 +281,8 @@ $heroD_txt_clr: #5c6574;
           display: flex;
           flex-direction: column;
 
-          width: 300px;
+          width: 250px;
+          height: 500px;
         }
         .circle {
           background: linear-gradient(#fdc55e00, #fdc55e, 2%, #ffffff00);
@@ -554,15 +559,15 @@ $heroD_txt_clr: #5c6574;
           border-radius: 50%;
 
           &:nth-child(1) {
-            animation: moveUpOne 2s infinite 1s;
+            animation: moveUpOne 1s infinite 0.5s;
           }
 
           &:nth-child(2) {
-            animation: moveUpTwo 2s infinite 2s;
+            animation: moveUpTwo 1s infinite 1s;
           }
 
           &:nth-child(3) {
-            animation: moveUpThree 2s infinite 3s;
+            animation: moveUpThree 1s infinite 1.5s;
           }
 
           @keyframes moveUpOne {
@@ -691,8 +696,15 @@ $heroD_txt_clr: #5c6574;
       align-items: center;
       justify-content: center;
       margin-top: 2rem;
-      .testimonials__card {
+
+      .swiper {
         width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .testimonials__card {
+        width: 100%;
         height: 300px;
         background-color: #fff;
         border-radius: 15px;
@@ -755,16 +767,18 @@ $heroD_txt_clr: #5c6574;
           color: #fff;
         }
         .subscribe-input-field {
-          display: flex;
-          flex-direction: row;
+          display: grid;
+          grid-template-columns: 70% 30%;
           background-color: #fff;
           margin-top: 1.4rem;
           border-radius: 20px;
           overflow: hidden;
           width: 600px;
+
           padding: 0.6rem;
           @media (max-width: 567px) {
             width: 90%;
+            grid-template-columns: 1fr;
           }
           input {
             border: none;
@@ -775,7 +789,7 @@ $heroD_txt_clr: #5c6574;
             display: flex;
             align-items: center;
             font-size: 1rem;
-
+            border-radius: 10px;
             &::placeholder {
               font-size: 17px;
               font-family: "Abhaya Libre", serif;
@@ -784,7 +798,7 @@ $heroD_txt_clr: #5c6574;
 
           .sub-cta {
             background-color: #a67c5b;
-            width: 120px;
+            width: 100%;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -803,7 +817,6 @@ $heroD_txt_clr: #5c6574;
 //Hero Section for pages
 .hero-default {
   height: 60vh;
-  background-color: red;
   background-image: url("../public/explore_assets/Frame\ 8429.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -989,6 +1002,7 @@ $heroD_txt_clr: #5c6574;
   width: 100%;
   overflow: hidden;
   padding: 5rem 0;
+  position: relative;
 
   @media (max-width: 567px) {
     height: auto;
@@ -1046,8 +1060,8 @@ $heroD_txt_clr: #5c6574;
           display: flex;
           justify-content: space-between;
           cursor: pointer;
-          border-radius: 0.7rem;
-          border: 2px solid #828791a9;
+          border-radius: 0.3rem;
+          border: 1px solid #89919e9f;
           align-items: center;
           background: #f0f1f3a9;
           position: relative;
@@ -1058,8 +1072,8 @@ $heroD_txt_clr: #5c6574;
           display: flex;
           justify-content: space-between;
           cursor: pointer;
-          border-radius: 0.7rem;
-          border: 2px solid #828791a9;
+          border-radius: 0.3rem;
+          border: 1px solid #89919e9f;
           align-items: center;
           background: #f0f1f3a9;
           position: relative;
@@ -1097,6 +1111,7 @@ $heroD_txt_clr: #5c6574;
         overflow: hidden;
         transition: 100ms ease;
         border-radius: 10px;
+        overflow: scroll;
 
         // box-shadow: 0 0 5px 5px #5c6574;
 
@@ -1134,8 +1149,8 @@ $heroD_txt_clr: #5c6574;
           width: 100%;
           padding: 1.1rem;
           outline: none;
-          border-radius: 0.7rem;
-          border: 1px solid #5c65749f;
+          border-radius: 0.3rem;
+          border: 1px solid #89919e9f;
           background: transparent;
           font-family: "Abhaya Libre", serif;
           font-size: 1.1rem;
