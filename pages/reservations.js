@@ -4,18 +4,26 @@ import "remixicon/fonts/remixicon.css";
 import axios from "axios";
 import { useState } from "react";
 import SendMessage from "@/components/SendMessage";
+import { message } from "antd";
 
 function Reservations() {
   const [showList, setShowList] = useState(false);
-  const [number, setNumber] = useState(2);
-  const [time, setTime] = useState("5:30 PM");
+
+  // Data
+  // const [number, setNumber] = useState(2);
+
   const [showTime, setShowTime] = useState(false);
 
   //States
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [numberPeople, setNumberP] = useState(2);
+  const [time, setTime] = useState("5:30 PM");
+  const [date, setDate] = useState(null);
   const [timeS, setTimeS] = useState("");
+
+  // Message State
+  const [success, setIsSuccess] = useState(false);
 
   const showOptions = () => {
     setShowList(!showList);
@@ -26,16 +34,25 @@ function Reservations() {
   };
 
   const setNumberPeople = (number) => {
-    setNumber(number);
+    // setNumber(number);
     setNumberP(number);
   };
 
-  const setTimeValue = (time) => {
-    setTime(time);
+  // const setTimeValue = (time) => {
+  //   setTime(time);
+  // };
+
+  const handleDate = (e) => {
+    setDate(e.target.value);
+    console.log(date);
+  };
+
+  const handleTime = (e) => {
+    setTime(e.target.value);
   };
 
   const handleSubmit = async (e) => {
-    alert("Clic");
+    setIsSuccess(true);
     e.preventDefault();
 
     const data = {
@@ -43,15 +60,26 @@ function Reservations() {
       email,
       numberPeople,
       time,
+      date,
     };
 
-    const response = fetch("api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    console.log(data);
+
+    try {
+      const response = await fetch("api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        setIsSuccess(false);
+        if (response.ok == false) message.error("An Error Occured");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <>
@@ -68,7 +96,6 @@ function Reservations() {
                 type="text"
                 className="inputOne"
                 placeholder="Name"
-                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -76,14 +103,15 @@ function Reservations() {
                 type="text"
                 className="inputOne"
                 placeholder="Email"
-                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              <input type="date" value={date} onChange={handleDate} />
+
               <div className="second-container">
                 <div className="first-container" onClick={showOptions}>
                   <i class="ri-user-fill"></i>
-                  <p>{number} People</p>
+                  <p>{numberPeople} People</p>
                   <i
                     class={`ri-arrow-down-s-line ${showList && "rotateArrow"}`}
                   ></i>
@@ -92,7 +120,8 @@ function Reservations() {
                     <ul>
                       <li>
                         <button
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.preventDefault();
                             setNumberPeople(3);
                           }}
                         >
@@ -101,7 +130,8 @@ function Reservations() {
                       </li>
                       <li>
                         <button
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.preventDefault();
                             setNumberPeople(4);
                           }}
                         >
@@ -110,7 +140,8 @@ function Reservations() {
                       </li>
                       <li>
                         <button
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.preventDefault();
                             setNumberPeople(5);
                           }}
                         >
@@ -119,7 +150,8 @@ function Reservations() {
                       </li>
                       <li>
                         <button
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.preventDefault();
                             setNumberPeople(6);
                           }}
                         >
@@ -128,17 +160,34 @@ function Reservations() {
                       </li>
                       <li>
                         <button
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.preventDefault();
                             setNumberPeople(7);
                           }}
                         >
                           7 People
                         </button>
                       </li>
+                      <li>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setNumberPeople(7);
+                          }}
+                        >
+                          Custom
+                        </button>
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div className="first-container" onClick={showTimeOptions}>
+                <input
+                  type="time"
+                  className="date"
+                  value={time}
+                  onChange={handleTime}
+                />
+                {/* <div className="first-container" onClick={showTimeOptions}>
                   <i class="ri-time-fill"></i>
                   <p>{time}</p>
                   <i
@@ -175,32 +224,18 @@ function Reservations() {
                           7:30 PM
                         </button>
                       </li>
-                      {/* <li>
-                      <button
-                        onClick={() => {
-                          setNumberPeople(6);
-                        }}
-                      >
-                        6 People
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => {
-                          setNumberPeople(7);
-                        }}
-                      >
-                        7 People
-                      </button>
-                    </li> */}
                     </ul>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="r-btn">
                 <div onClick={handleSubmit}>
-                  <SendMessage type="button" text="MAKE A RESERVATION" />
+                  <SendMessage
+                    success={success}
+                    type="button"
+                    text="MAKE A RESERVATION"
+                  />
                 </div>
               </div>
             </form>
