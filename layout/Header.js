@@ -65,15 +65,7 @@ const Header = () => {
                   GALLERY
                 </Link>
               </li>
-              <li>
-                <Link
-                  onClick={handleCloseBtn}
-                  className="nav-link"
-                  href="/gallery"
-                >
-                  GALLERY
-                </Link>
-              </li>
+
               <li>
                 <Link
                   onClick={handleCloseBtn}
