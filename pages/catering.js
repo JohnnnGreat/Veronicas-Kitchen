@@ -62,6 +62,7 @@ const Catering = () => {
                   </select>
                 </div>
               </div>
+              <button className="catering-cta">Submit</button>
             </form>
           </div>
         </div>
