@@ -29,19 +29,8 @@ import Background from "../public/utils_assets/Testimonial.png";
 import Carousel from "react-bootstrap/Carousel";
 // import ExampleCarouselImage from "components/ExampleCarouselImage";
 
-//Swiper Imports
-import { Swiper, SwiperSlide } from "swiper/react";
-import { SwiperCore } from "swiper";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-
-import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
+// import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 // import SwiperCore from "swiper";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -317,7 +306,7 @@ export default function Home() {
                 </div>
               </SwiperSlide>
             </Swiper> */}
-            <MDBCarousel showControls dealy={3000} showIndicators>
+            {/* <MDBCarousel showControls dealy={3000} showIndicators>
               <MDBCarouselItem
                 className="swiper"
                 itemId={1}
@@ -340,7 +329,7 @@ export default function Home() {
                 src="https://mdbootstrap.com/img/new/slides/043.jpg"
                 alt="..."
               />
-            </MDBCarousel>
+            </MDBCarousel> */}
           </div>
         </div>
       </div>
