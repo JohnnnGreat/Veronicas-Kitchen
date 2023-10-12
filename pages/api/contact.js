@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export default async function (req, res) {
+export default async function contact(req, res) {
   try {
     if (req.method === "POST") {
       const transporter = nodemailer.createTransport({

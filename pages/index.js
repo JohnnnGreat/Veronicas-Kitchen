@@ -31,7 +31,11 @@ import Carousel from "react-bootstrap/Carousel";
 
 //Swiper Imports
 import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperCore } from "swiper";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
+// import SwiperCore from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -73,7 +77,9 @@ export default function Home() {
         <div className="hero__wrapper">
           <div className="hero_content">
             <div className="hero__first">
-              <h1 className="first_text">Serving Nigeria’s Delicious Cusine</h1>
+              <h1 className="first_text">
+                Serving Nigeria&apos;s Delicious Cusine
+              </h1>
               <p className="first_desc">
                 We understand the irreplaceable comfort of home, which is why we
                 have crafted an extraordinary dining experience that brings the
@@ -85,8 +91,12 @@ export default function Home() {
                 <Link className="cta-btn grey" href="/reservations">
                   MAKE RESERVATION
                 </Link>
-                <Link className="cta-btn brown" href="/reservations">
-                  MAKE ORDER
+                <Link
+                  className="cta-btn brown"
+                  target="_blank"
+                  href=" https://veronicaskitchen.hrpos.heartland.us/menu"
+                >
+                  LIVE MENU
                 </Link>
               </div>
             </div>
@@ -260,9 +270,9 @@ export default function Home() {
             </div>
           </div>
           <div className="explore-container">
-            {/* <Link className="link" href="/gallery">
+            <Link className="link" href="/gallery">
               <SendMessage text="VIEW MORE IN OUR GALLERY" />
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
@@ -274,16 +284,17 @@ export default function Home() {
             <h1>Discover What Our Ecstatic Customers Have to Say</h1>
           </div>
           <div className="testimonials__wrapper__contents">
-            <Swiper
+            {/* <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={50}
+              spaceBetween={0}
               slidesPerView={1}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-              navigation
-              pagination={{ clickable: true }}
+              znavigation={false}
               scrollbar={{ draggable: true }}
-              effect={"cube"}
+              pagination={{
+                clickable: true,
+                renderBullet: (index, className) =>
+                  `<span class="${className}" style="background-color: green !important;"></span>`,
+              }}
             >
               <SwiperSlide className="swiper">
                 <div className="testimonials__card">
@@ -305,7 +316,31 @@ export default function Home() {
                   <h1>Card One</h1>
                 </div>
               </SwiperSlide>
-            </Swiper>
+            </Swiper> */}
+            <MDBCarousel showControls dealy={3000} showIndicators>
+              <MDBCarouselItem
+                className="swiper"
+                itemId={1}
+                src="https://mdbootstrap.com/img/new/slides/041.jpg"
+                alt="..."
+              >
+                <div className="c-content">1</div>
+              </MDBCarouselItem>
+              <MDBCarouselItem
+                className="swiper"
+                itemId={2}
+                src="https://mdbootstrap.com/img/new/slides/042.jpg"
+                alt="..."
+              >
+                <div>2</div>
+              </MDBCarouselItem>
+              <MDBCarouselItem
+                className="swiper"
+                itemId={3}
+                src="https://mdbootstrap.com/img/new/slides/043.jpg"
+                alt="..."
+              />
+            </MDBCarousel>
           </div>
         </div>
       </div>

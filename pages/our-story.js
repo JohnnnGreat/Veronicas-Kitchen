@@ -15,35 +15,34 @@ function OurStory() {
       <div className="about">
         <div className="about__wrapper">
           <div className="text">
-            Veronica&apos;s Kitchen was born from a deep passion to delight the
-            taste buds of immigrants from Nigeria, West Africa, and beyond, by
-            serving authentic dishes that capture the essence of the motherland.
-            As the beloved flavors of Veronica&apos;s Kitchen spread, our
-            clientele expanded to embrace a diverse array of people from various
-            demographics and races. However, our unwavering mission remains
-            unchanged - to consistently deliver Nigerian and West African meals
-            of the highest quality that evoke nostalgia and create a culinary
-            journey like no other.
+            Step into Veronica&apos;s Kitchen, a culinary gem nestled in Los
+            Angeles, where the soulful allure of Nigerian cuisine has thrived
+            for over three decades. Our story is woven with the passion and
+            dedication of Veronica, a visionary who set out to bring the taste
+            of home to Nigerians near and far, and to introduce the world to the
+            enchantment of fufu.
           </div>
           <div className="text">
-            From humble beginnings, Veronica&apos;s Kitchen has evolved into a
-            haven where cherished recipes are transformed into masterpieces.
-            With each dish, we aim to transport our guests to the heart of
-            Nigeria, offering a genuine taste of the rich cultural heritage and
-            vibrant culinary traditions. It is this dedication to authenticity
-            that has earned us the trust and loyalty of our patrons.
+            Veronica&apos;s Kitchen isn&apos;t just a restaurant; it&apos;s a
+            cultural bridge that connects the vibrant spirit of Nigeria to the
+            diverse tapestry of the world. Our commitment is to honor tradition
+            while embracing innovation, all while serving up the delectable
+            essence of Nigeria.
           </div>
           <div className="text">
-            At Veronica&apos;s Kitchen, we believe that the soul of Nigerian and
-            West African cuisine lies in the meticulous selection of fresh,
-            high-quality ingredients, combined with time-honored cooking
-            techniques passed down through generations. Our skilled chefs pour
-            their passion and creativity into every dish, ensuring that flavors
-            are harmoniously balanced and textures are exquisitely delightful.
+            In Veronica&apos;s Kitchen, we recognize that food is a catalyst for
+            shared experiences, and our viral &apos;Fufu Challenge&apos; on
+            TikTok is a testament to that. Veronica&apos;s passion for spreading
+            joy through food transcends borders and generations, making us a
+            cherished destination for food enthusiasts and culture seekers
+            alike.
           </div>
           <div className="text">
-            We take pride in creating an inviting atmosphere that reflects the
-            warmth and hospitality of our beloved continent.
+            Whether you&apos;re a connoisseur of Nigerian dishes or embarking on
+            a journey of discovery, our meticulously crafted recipes will
+            transport your senses to a place of pure gastronomic delight. Come,
+            join us at Veronica&apos;s Kitchen, and let the rich and captivating
+            flavors of Nigeria become a part of your own narrative.
           </div>
         </div>
       </div>

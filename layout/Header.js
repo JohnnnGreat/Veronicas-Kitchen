@@ -27,7 +27,7 @@ const Header = () => {
               style={{ textDecoration: "none" }}
               href={"/"}
             >
-              <h1 className="header_c__l__text">VERONICA'S KITCHEN</h1>
+              <h1 className="header_c__l__text">VERONICA&apos;S KITCHEN</h1>
             </Link>
           </div>
           <div className="header_c__logo">
@@ -44,6 +44,7 @@ const Header = () => {
               src={CloseBtn}
               onClick={handleCloseBtn}
               className="close_nav"
+              alt="Close btn"
             ></Image>
             <ul>
               <li>
@@ -68,6 +69,24 @@ const Header = () => {
                 <Link
                   onClick={handleCloseBtn}
                   className="nav-link"
+                  href="/gallery"
+                >
+                  GALLERY
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={handleCloseBtn}
+                  className="nav-link"
+                  href="/catering"
+                >
+                  CATERING
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={handleCloseBtn}
+                  className="nav-link"
                   href="/reservations"
                 >
                   RESERVATIONS
@@ -85,7 +104,7 @@ const Header = () => {
             </ul>
           </nav>
           <div onClick={handleNavOpen} className="nav_menu">
-            <Image className="nav_btn" src={NavOpen}></Image>
+            <Image className="nav_btn" alt="close btn" src={NavOpen}></Image>
           </div>
         </div>
       </div>
