@@ -260,9 +260,9 @@ export default function Home() {
             </div>
           </div>
           <div className="explore-container">
-            <Link className="link" href="/gallery">
+            {/* <Link className="link" href="/gallery">
               <SendMessage text="VIEW MORE IN OUR GALLERY" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -310,7 +310,6 @@ export default function Home() {
         </div>
       </div>
       <Subscribe />
-     
     </div>
   );
 }
