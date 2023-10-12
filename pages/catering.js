@@ -27,14 +27,18 @@ const Catering = () => {
           <p className="inquiry-form-header">Fill an inquiry form!</p>
           <div className="form-container">
             <form action="">
-              <label htmlFor="name">Contact Address</label>
-              <input type="text" id="contact" />
+              <label htmlFor="name">Contact Name</label>
+              <input type="text" placeholder="eg. John Doe" id="contact" />
               <label htmlFor="number">Phone Number.</label>
-              <input type="text" id="number" />
+              <input type="text" id="number" placeholder="eg. +12737465" />
               <div className="form-flex">
                 <div>
                   <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" />
+                  <input
+                    type="email"
+                    placeholder="eg. johndoe@email.com"
+                    id="email"
+                  />
                 </div>
                 <div>
                   <label htmlFor="contact">Date Order Needed</label>
@@ -44,7 +48,11 @@ const Catering = () => {
               <div className="form-flex">
                 <div>
                   <label htmlFor="numberPeople">Number of People</label>
-                  <input type="number" id="numberPeople" />
+                  <input
+                    placeholder="eg. 2, 4"
+                    type="number"
+                    id="numberPeople"
+                  />
                 </div>
                 <div>
                   <label htmlFor="numberPeople">Delivery</label>
