@@ -62,6 +62,13 @@ const Catering = () => {
                   </select>
                 </div>
               </div>
+              <textarea
+                placeholder="Tell us something about your inquiry..."
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
               <button className="catering-cta">Submit</button>
             </form>
           </div>

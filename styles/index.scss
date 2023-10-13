@@ -12,10 +12,26 @@ $heroD_txt_clr: #5c6574;
     display: flex;
     align-items: center;
     height: 90vh;
+    padding: 1rem;
+    position: relative;
     @media (max-width: 567px) {
       padding: 1rem;
       height: auto;
     }
+
+    .trc-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      .trace-image {
+        margin-left: -4rem;
+        width: 100px;
+      }
+    }
+
     &__wrapper {
       max-width: 77rem;
       margin-left: auto;
@@ -35,11 +51,11 @@ $heroD_txt_clr: #5c6574;
 
       .hero_content {
         display: grid;
-        grid-template-columns: 35% 65%;
+        grid-template-columns: 40% 60%;
         align-items: center;
         justify-content: center;
         position: relative;
-        gap: 1.5rem;
+        gap: 2rem;
 
         @media (max-width: 567px) {
           grid-template-columns: 1fr;
@@ -59,12 +75,13 @@ $heroD_txt_clr: #5c6574;
             }
           }
           .first_desc {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
             color: $heroD_txt_clr;
             margin-top: 18px;
             text-align: justify;
             line-height: 18.3px;
+            line-height: 1.2;
 
             @media (max-width: 567px) {
               font-size: 16px;
@@ -81,14 +98,14 @@ $heroD_txt_clr: #5c6574;
               flex-wrap: wrap;
             }
             .cta-btn {
-              font-size: 16px;
+              font-size: 15px;
               width: 100%;
               text-align: center;
               padding: 1.2rem 0.5rem;
               text-decoration: none;
               color: #fff;
-              border-radius: 15px;
-              font-weight: 700;
+              border-radius: 10px;
+              font-weight: 600;
               letter-spacing: 2px;
 
               @media (max-width: 567px) {
@@ -215,7 +232,6 @@ $heroD_txt_clr: #5c6574;
     align-items: center;
     justify-content: center;
     &__wrapper {
-      height: 75%;
       max-width: 75rem;
       margin: 0 auto;
 
@@ -230,7 +246,10 @@ $heroD_txt_clr: #5c6574;
         h1 {
           font-size: 55px;
           text-align: center;
+          font-weight: 600;
+
           color: $heroH_txt_clr;
+
           @media (max-width: 567px) {
             font-size: 50px;
           }
@@ -238,11 +257,12 @@ $heroD_txt_clr: #5c6574;
 
         p {
           color: $heroD_txt_clr;
-          font-size: 20px;
+          font-size: 18px;
           text-align: center;
           max-width: 800px;
-          margin-top: 22px;
-          margin: auto;
+          line-height: 1.5;
+
+          padding: 0;
 
           @media (max-width: 567px) {
             font-size: 16px;
@@ -253,11 +273,9 @@ $heroD_txt_clr: #5c6574;
       &__order {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-
-        margin-top: 30px;
         max-width: 900px;
-        margin: auto;
         gap: 2rem;
+        margin-top: 1rem;
 
         @media (max-width: 567px) {
           grid-template-columns: 1fr;
@@ -281,8 +299,8 @@ $heroD_txt_clr: #5c6574;
           display: flex;
           flex-direction: column;
 
-          width: 250px;
-          height: 500px;
+          width: 300px;
+          height: 510px;
         }
         .circle {
           background: linear-gradient(#fdc55e00, #fdc55e, 2%, #ffffff00);
@@ -327,16 +345,15 @@ $heroD_txt_clr: #5c6574;
           }
         }
         .content {
-          padding: 0 1rem;
+          padding: 2rem;
           display: block;
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
 
           .food_title {
-            font-size: 30;
+            font-size: 30px;
             color: #a67c5b;
             font-weight: 800;
             text-align: center;
-            margin-top: 24px;
           }
 
           .food_desc {
@@ -371,8 +388,7 @@ $heroD_txt_clr: #5c6574;
 }
 
 .why-us {
-  height: 100vh;
-  padding: 2rem 0;
+  padding: 5rem 0;
 
   @media (max-width: 567px) {
     height: auto;
@@ -383,6 +399,7 @@ $heroD_txt_clr: #5c6574;
     &__header {
       h1 {
         font-size: 55px;
+        font-weight: 600;
         text-align: center;
         color: $heroH_txt_clr;
 
@@ -423,6 +440,7 @@ $heroD_txt_clr: #5c6574;
         justify-content: center;
         row-gap: 32px;
         width: 300px;
+        height: 400px;
 
         .why-img {
           width: 70px;
@@ -432,12 +450,15 @@ $heroD_txt_clr: #5c6574;
         .content-main {
           h1 {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
             font-weight: 800;
+            font-size: 30px;
           }
           p {
             color: #5c6574;
             text-align: center;
+            line-height: 1.4;
+            font-size: 17px;
           }
         }
       }
@@ -1322,10 +1343,11 @@ $secondary-color: #666;
   &__wrapper {
     max-width: 1100px;
     margin: auto;
-
+    padding: 1rem;
     .inquiry-form-header {
       font-size: 55px;
       text-align: center;
+      font-weight: 600;
     }
 
     div {
@@ -1338,10 +1360,20 @@ $secondary-color: #666;
         display: flex;
         flex-direction: column;
         width: 600px;
+
+        @media (max-width: 567px) {
+          width: 100%;
+        }
         .catering-cta {
           margin-top: 1rem;
           padding: 0.7rem;
           border-radius: 5px;
+          background-color: $heroH_txt_clr;
+          color: #fff;
+
+          &:hover {
+            background-color: #555555;
+          }
         }
         input,
         select {
@@ -1351,7 +1383,26 @@ $secondary-color: #666;
           color: $primary-color;
           border-radius: 5px;
           border: none;
-          border: 1px solid $heroD_txt_clr;
+          border: 1px solid rgb(182, 182, 182);
+
+          &::placeholder {
+            font-size: 14px;
+          }
+        }
+
+        label {
+          margin-top: 0.7rem;
+        }
+
+        textarea {
+          width: 100%;
+          max-height: 100px;
+          min-height: 100px;
+          margin-top: 0.7rem;
+          border-radius: 5px;
+          border: 1px solid rgb(182, 182, 182);
+          padding: 0.7rem;
+          outline: none;
         }
 
         .form-flex {

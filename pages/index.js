@@ -9,6 +9,7 @@ import OrderComponent from "@/components/Orders";
 import WhyUsComponent from "@/components/Why_us";
 import SendMessage from "@/components/SendMessage";
 import Subscribe from "@/components/subscribe";
+import TracedImage from "@/public/utils_assets/Traced.svg";
 
 //Special Food Orders
 import OrderOne from "@/public/special_assets/foodOne.png";
@@ -63,6 +64,14 @@ export default function Home() {
   return (
     <div className="home">
       <div className="hero">
+        <div className="trc-container">
+          <Image
+            src={TracedImage}
+            className="trace-image"
+            alt="traced image for the hero"
+          ></Image>
+        </div>
+
         <div className="hero__wrapper">
           <div className="hero_content">
             <div className="hero__first">
@@ -167,10 +176,19 @@ export default function Home() {
               <OrderComponent
                 price="150"
                 title="Seafood Okra"
-                desc="Experience the delightful Seafood Okra, a delectable combination of fresh seafood and tender okra cooked in a scrumptious broth of tomatoes, onions, and traditional Nigerian spices. Indulge in this savory dish showcasing the best of African coastal cuisine."
+                desc="Experience the delightful Seafood Okra, a delectable combination of fresh seafood and tender okra cooked in a scrumptious broth of tomatoes, onions, and traditional Nigerian spices..
+              "
                 orderImage={OrderOne}
               />
             </div>
+            {/* <div>
+              <OrderComponent
+                price="150"
+                title="Seafood Okra"
+                desc="Experience the delightful Seafood Okra, a delectable combination of fresh seafood and tender okra cooked in a scrumptious broth of tomatoes, onions, and traditional Nigerian spices. Indulge in this savory dish showcasing the best of African coastal cuisine."
+                orderImage={OrderOne}
+              />
+            </div> */}
           </div>
         </div>
       </div>
@@ -209,6 +227,7 @@ export default function Home() {
               <WhyUsComponent
                 title="Memorable Ambience"
                 image={Third}
+                br={true}
                 desc="Immerse yourself in a cozy ambiance that effortlessly combines comfort and elegance, providing the perfect setting to savor delightful flavors and create lasting memories."
               />
             </div>
