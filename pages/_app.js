@@ -1,5 +1,6 @@
 import "aos/dist/aos.css";
 import "@/styles/globals.scss";
+import "@/styles/globals.css";
 import "@/styles/layout.scss";
 import "@/styles/index.scss";
 import Header from "@/layout/Header";
