@@ -865,12 +865,18 @@ $heroD_txt_clr: #5c6574;
     justify-content: center;
     position: relative;
     z-index: 1;
+    margin-top: -1rem;
 
     a {
       color: #fff;
-      text-decoration: underline;
+      text-decoration: none;
       display: inline-block;
       margin-left: 0.5rem;
+      background-color: $primary_color;
+      color: #333;
+      padding: 0.4rem 0.9rem;
+      font-weight: 900;
+      border-radius: 4px;
     }
   }
   &::before {
