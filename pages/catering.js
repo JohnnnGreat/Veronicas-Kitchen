@@ -11,6 +11,7 @@ const Catering = () => {
   const [food, setFood] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
   const [date, setDate] = useState(new Date());
+  const [options, setOptions] = useState("Yes");
 
   const foodItems = [
     { id: 1, name: "Egusi" },
@@ -20,7 +21,11 @@ const Catering = () => {
     { id: 5, name: "Nsala" },
     { id: 6, name: "Pepper Soup" },
     { id: 7, name: "Red Stew" },
-    { id: 8, name: "Vegetable Stew" },
+    { id: 8, name: "Ewa Riro" },
+    { id: 8, name: "Plantains" },
+    { id: 8, name: "Puff Puff" },
+    { id: 8, name: "Yam Porridge" },
+    // { id: 8, name: "Meat Pies, Suya, Moi Moi" },
   ];
 
   const foodArr = [];
@@ -199,60 +204,27 @@ const Catering = () => {
                       </ul>
                     </div>
                   </div>
-                  {/* <input
-                    type="time"
-                    className="date"
-                    value={time}
-                    placeholder="Time"
-                    onChange={handleTime}
-                  /> */}
-                  {/* <div className="first-container" onClick={showTimeOptions}>
-                  <i class="ri-time-fill"></i>
-                  <p>{time}</p>
+                </div>
+                <div className="delivery">
+                  <i class="ri-user-fill"></i>
+                  <p>{options}</p>
                   <i
-                    class={`ri-arrow-down-s-line ${showTime && "rotateArrow"}`}
+                    class={`ri-arrow-down-s-line ${showList && "rotateArrow"}`}
                   ></i>
-
-                  <div className={`oth-list ${showTime && "showListOptions"}`}>
+                  <div className={`oth-list ${showList && "showListOptions"}`}>
                     <ul>
                       <li>
                         <button
-                          onClick={() => {
-                            setTime("5:30 PM");
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setNumberPeople(3);
                           }}
                         >
-                          5:30 PM
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          value="6:30"
-                          onClick={() => {
-                            setTime("6:30 PM");
-                          }}
-                        >
-                          6:30 PM
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          onClick={() => {
-                            setTime("7:30 PM");
-                          }}
-                        >
-                          7:30 PM
+                          Yes
                         </button>
                       </li>
                     </ul>
                   </div>
-                </div> */}
-                </div>
-                <div>
-                  <label htmlFor="delivery">Delivery</label>
-                  <select id="delivery">
-                    <option value="option1">Yes</option>
-                    <option value="option2">No</option>
-                  </select>
                 </div>
               </div>
               <button className="dishes" onClick={showFoodList}>
@@ -287,7 +259,7 @@ const Catering = () => {
           </div>
         </div>
       </div>
-
+      <Calendar onChange={setDate} value={date} />
       {showNav && (
         <div className="modal-container">
           <i
