@@ -75,7 +75,7 @@ const Header = () => {
                   CATERING
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   onClick={handleCloseBtn}
                   className="nav-link"
@@ -83,7 +83,7 @@ const Header = () => {
                 >
                   RESERVATIONS
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   onClick={handleCloseBtn}

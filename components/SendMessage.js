@@ -8,7 +8,7 @@ import Arrow from "@/public/icons_assets/Vector (2).png";
 function SendMessage({ text, success }) {
   return (
     <>
-      <div className="exp_btn">
+      <button className="exp_btn">
         <div className="explore-link">
           {success && (
             <div className="loader">
@@ -25,7 +25,7 @@ function SendMessage({ text, success }) {
             <Image className="arrow_img" src={Arrow} alt="exp-arrow"></Image>
           </div>
         </div>
-      </div>
+      </button>
     </>
   );
 }

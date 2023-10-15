@@ -1,4 +1,5 @@
 import "remixicon/fonts/remixicon.css";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -39,12 +40,25 @@ function Footer() {
             <h1 className="item__header">Follow Us</h1>
             <div className="social_media">
               <div>
-                <i class="ri-facebook-fill"></i>
+                <Link
+                  href="  https://web.facebook.com/veronicas.kitchen.3?_rdc=1&_rdr"
+                  target="_blank"
+                >
+                  {" "}
+                  <i class="ri-facebook-fill"></i>
+                </Link>
               </div>
               <div>
-                <i class="ri-instagram-line"></i>
+                <Link
+                  href="mailto:contact@veronicas-kitchen.com"
+                  target="_blank"
+                >
+                  {" "}
+                  <i class="ri-mail-line"></i>
+                </Link>
               </div>
               <div>
+                <Link href=''></Link>
                 <i class="ri-instagram-line"></i>
               </div>
             </div>
