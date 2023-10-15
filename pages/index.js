@@ -130,9 +130,9 @@ export default function Home() {
                     cherished memories.
                   </p>
                   <div className="first_cta">
-                    <Link className="cta-btn grey" href="/reservations">
+                    {/* <Link className="cta-btn grey" href="/reservations">
                       MAKE RESERVATION
-                    </Link>
+                    </Link> */}
                     <Link
                       className="cta-btn brown"
                       target="_blank"
