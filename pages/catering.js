@@ -8,6 +8,7 @@ import Calendar from "react-calendar";
 const Catering = () => {
   const [numberPeople, setNumberP] = useState(2);
   const [showList, setShowList] = useState(false);
+  const [showDList, setShowDList] = useState(false);
   const [food, setFood] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
   const [date, setDate] = useState(new Date());
@@ -32,6 +33,10 @@ const Catering = () => {
   const [showNav, setShowNav] = useState(false);
   const showOptions = () => {
     setShowList(!showList);
+  };
+
+  const showDOptions = () => {
+    setShowDList(!showDList);
   };
 
   const setNumberPeople = (number) => {
@@ -74,6 +79,11 @@ const Catering = () => {
 
   const showCalenda = (e) => {
     e.preventDefault();
+  };
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    alert("form");
   };
   return (
     <>
@@ -205,22 +215,36 @@ const Catering = () => {
                     </div>
                   </div>
                 </div>
-                <div className="delivery">
+                <div className="delivery" onClick={showDOptions}>
                   <i class="ri-user-fill"></i>
                   <p>{options}</p>
                   <i
-                    class={`ri-arrow-down-s-line ${showList && "rotateArrow"}`}
+                    class={`ri-arrow-down-s-line ${showDList && "rotateArrow"}`}
                   ></i>
-                  <div className={`oth-list ${showList && "showListOptions"}`}>
+                  <div
+                    className={`delivery-list ${
+                      showDList && "showDListOptions"
+                    }`}
+                  >
                     <ul>
                       <li>
                         <button
                           onClick={(e) => {
                             e.preventDefault();
-                            setNumberPeople(3);
+                            setOptions("Yes");
                           }}
                         >
                           Yes
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setOptions("No");
+                          }}
+                        >
+                          No
                         </button>
                       </li>
                     </ul>
@@ -245,6 +269,7 @@ const Catering = () => {
               </div>
 
               <textarea
+                className="yellow-out"
                 placeholder="Tell us something about your inquiry..."
                 name=""
                 id=""
@@ -252,7 +277,7 @@ const Catering = () => {
                 rows="10"
               ></textarea>
               <div className="bg-lo">
-                <SendMessage text="SEND A MESSAGE" />
+                <SendMessage onClick={handleForm} text="SEND A MESSAGE" />
                 {/* <div className="loader-cta"></div> */}
               </div>
             </form>
