@@ -3,6 +3,8 @@ import HeroSection from "@/components/HeroSection";
 import SendMessage from "@/components/SendMessage";
 import Subscribe from "@/components/subscribe";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+import Link from "next/link";
 
 function Contact() {
   const {
@@ -38,10 +40,11 @@ function Contact() {
 
       if (response.status === 500) {
         // message.error("An error Occured");
-
+        toast.error("An error Occured");
         setIsLoading(false);
       } else {
         setSuccess(true);
+        toast.success("Message Sent Successfully");
         // message.success("Message Sents Successfully");
         console.log(response);
         setIsLoading(false);
@@ -54,6 +57,7 @@ function Contact() {
   }
   return (
     <>
+      <Toaster />
       <HeroSection
         title="Contact Us"
         desc="Get in touch with us to elevate your dining experience. Contact our team for inquiries, special requests, or feedback. Reach out to us using the contact information provided below, and let us create memorable moments together."
@@ -117,9 +121,38 @@ function Contact() {
             </div>
             <div className="second__contact-details">
               <h1 className="second-header">FOLLOW US</h1>
-              <div className="social-media"></div>
-              <div className="contact-phone">Phone No.: 000 000 0000</div>
-              <div className="contact-email">Email Address: Fill</div>
+              <div className="social_media">
+                <div>
+                  <Link
+                    href="  https://web.facebook.com/veronicas.kitchen.3?_rdc=1&_rdr"
+                    target="_blank"
+                  >
+                    {" "}
+                    <i class="ri-facebook-fill"></i>
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    href="mailto:contact@veronicas-kitchen.com"
+                    target="_blank"
+                  >
+                    {" "}
+                    <i class="ri-mail-line"></i>
+                  </Link>
+                </div>
+                <div>
+                  <Link href="">
+                    {" "}
+                    <i class="ri-instagram-line"></i>
+                  </Link>
+                </div>
+              </div>
+              <div className="contact-phone">
+                Phone No.: <span>+3106734890</span>{" "}
+              </div>
+              <div className="contact-email">
+                Email Address: <span>theveronicaskitchen@gmail.com</span>
+              </div>
             </div>
           </div>
         </div>

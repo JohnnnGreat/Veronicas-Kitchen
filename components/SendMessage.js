@@ -22,7 +22,7 @@ function SendMessage({ text, success }) {
 
           <p>{text}</p>
           <div className="rounder">
-            <Image className="arrow_img" src={Arrow} alt="exp-arrow"></Image>
+            <i class="ri-arrow-right-s-line"></i>
           </div>
         </div>
       </button>

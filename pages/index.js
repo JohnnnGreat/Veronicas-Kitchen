@@ -10,6 +10,7 @@ import WhyUsComponent from "@/components/Why_us";
 import SendMessage from "@/components/SendMessage";
 import Subscribe from "@/components/subscribe";
 import TracedImage from "@/public/utils_assets/Traced.svg";
+import Head from "next/head";
 
 //Special Food Orders
 import OrderOne from "@/public/special_assets/foodOne.png";
@@ -44,7 +45,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 4500);
   }, []);
 
   const handleSelect = (selectedIndex) => {
@@ -72,6 +73,35 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>HOME | Veronica&apos;s Kitchen</title>
+        <meta
+          name="description"
+          content="Veronica's Kitchen isn't just a restaurant; it's a
+          cultural bridge that connects the vibrant spirit of Nigeria to the
+          diverse tapestry of the world."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Facebook Open Graph */}
+        <meta
+          property="og:url"
+          content="https://web.facebook.com/veronicas.kitchen.3?_rdc=1&_rdr"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="HOME | Veronica Kitchen" />
+        <meta
+          property="og:description"
+          content="Veronica's Kitchen isn't just a restaurant; it's a
+          cultural bridge that connects the vibrant spirit of Nigeria to the
+          diverse tapestry of the world."
+        />
+        <meta
+          property="og:image"
+          // content="https://midwest-jack-greens-main.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.c8df4b2a.png&w=256&q=75"
+        />
+      </Head>
       {isLoading ? (
         <Preloader />
       ) : (

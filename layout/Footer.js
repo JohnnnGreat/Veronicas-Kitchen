@@ -58,8 +58,10 @@ function Footer() {
                 </Link>
               </div>
               <div>
-                <Link href=''></Link>
-                <i class="ri-instagram-line"></i>
+                <Link href="">
+                  {" "}
+                  <i class="ri-instagram-line"></i>
+                </Link>
               </div>
             </div>
           </div>

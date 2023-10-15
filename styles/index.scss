@@ -543,7 +543,7 @@ $heroD_txt_clr: #5c6574;
 
 .exp_btn {
   display: flex;
-  margin-top: 40px;
+  margin-top: 35px;
   overflow: hidden;
   position: relative;
 
@@ -553,8 +553,8 @@ $heroD_txt_clr: #5c6574;
     justify-content: center;
     column-gap: 1.5rem;
     background-color: #a67c5b;
-    padding: 0.5rem 0.9rem;
-    border-radius: 15px;
+    // padding: 0.5rem 0.9rem;
+    border-radius: 10px;
     text-decoration: none;
     width: 400px;
     position: relative;
@@ -645,8 +645,8 @@ $heroD_txt_clr: #5c6574;
 
     .rounder {
       background-color: #ffff;
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1045,6 +1045,42 @@ $heroD_txt_clr: #5c6574;
           }
         }
       }
+
+      .second__contact-details {
+        .second-header {
+          font-size: 20px;
+          font-weight: 800;
+        }
+
+        .contact-phone,
+        .contact-email {
+          font-size: 20px;
+          font-weight: 800;
+          margin-top: 1.5rem;
+
+          span {
+            font-weight: 400;
+          }
+        }
+        .social_media {
+          display: flex;
+          gap: 1rem;
+          margin-top: 1rem;
+          div {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -1386,13 +1422,22 @@ $secondary-color: #666;
         }
         input,
         select {
-          width: 100%;
+          display: block;
+          width: 90%;
+          height: 50px;
           outline: none;
-          padding: 0.6rem;
-          color: $primary-color;
-          border-radius: 5px;
-          border: none;
-          border: 1px solid rgb(182, 182, 182);
+          padding: 0.8rem;
+          margin-top: 1rem;
+          border: 1px solid rgba(65, 65, 65, 0.39);
+          border-radius: 4px;
+          background-color: rgb(238, 238, 238);
+          // width: 100%;
+          // outline: none;
+          // padding: 0.6rem;
+          // color: $primary-color;
+          // border-radius: 5px;
+          // border: none;
+          // border: 1px solid rgb(182, 182, 182);
 
           &::placeholder {
             font-size: 14px;
