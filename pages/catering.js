@@ -172,6 +172,7 @@ const Catering = () => {
             data-aos-duration="1000"
             download="catering"
           >
+            <i class="ri-file-download-fill"></i>
             Download Our Catering Menu
           </a>
         </div>

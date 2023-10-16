@@ -1000,11 +1000,15 @@ $heroD_txt_clr: #5c6574;
       text-decoration: none;
       display: inline-block;
       margin-left: 0.5rem;
-      background-color: $primary_color;
-      color: #333;
+      text-decoration: underline;
       padding: 0.4rem 0.9rem;
-      font-weight: 900;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
       border-radius: 4px;
+      align-items: center;
+      justify-content: center;
 
       @media (max-width: 567px) {
         display: block;
