@@ -27,7 +27,7 @@ export default async function inquiry(req, res) {
             <h1 style="color:#a67c5b; font-size: 18px; margin-bottom: 5px;">Name: ${req.body.name}</h1>
             <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Email: ${req.body.email}</h1>
             <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Phone: ${req.body.phone}</h1>
-            <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Date: ${req.body.dateParse}</h1>
+            <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Date: ${req.body.parseDate}</h1>
             <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Number of People: ${req.body.numberPeople}</h1>
             <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Delivery: ${req.body.options}</h1>
             <h1 style="color: #a67c5b; font-size: 18px; margin-bottom: 5px;">Food Item: ${req.body.checkedItems}</h1>

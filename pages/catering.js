@@ -5,6 +5,7 @@ import Modal from "@/components/ShowList";
 import SendMessage from "@/components/SendMessage";
 import Calendar from "react-calendar";
 import toast, { Toaster } from "react-hot-toast";
+import { useForm } from "react-hook-form";
 
 const Catering = () => {
   const [numberPeople, setNumberP] = useState(2);
@@ -14,10 +15,7 @@ const Catering = () => {
   const [checkedItems, setCheckedItems] = useState([]);
   const [date, setDate] = useState(new Date());
   const [options, setOptions] = useState("Yes");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+
   const [openCalender, setOpenCalender] = useState(false);
   const [loading, setIsLoading] = useState(false);
 
@@ -35,6 +33,23 @@ const Catering = () => {
     { id: 11, name: "Yam Porridge" },
     // { id: 8, name: "Meat Pies, Suya, Moi Moi" },
   ];
+
+  //react handleForm to process the form inputs validation
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors, isValid },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+      phone: "",
+    },
+
+    mode: "onChange",
+  });
 
   const foodArr = [];
   const [showNav, setShowNav] = useState(false);
@@ -105,9 +120,11 @@ const Catering = () => {
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
-  const handleForm = async (e) => {
-    e.preventDefault();
+  const handleForm = async (values) => {
+    // e.preventDefault();
     setIsLoading(true);
+    console.log(values);
+    const { name, email, phone, message } = values;
     try {
       const parseDate = date.toDateString();
       const data = {
@@ -133,13 +150,19 @@ const Catering = () => {
         // message.error("An error Occured");
         toast.error("An error Occured");
         setIsLoading(false);
+        reset();
       } else {
         // setSuccess(true);
         toast.success("Message Sent Successfully");
         setIsLoading(false);
         console.log(response);
+        reset();
+        setDate(new Date());
+        setCheckedItems([]);
+        setNumberP(2);
       }
     } catch (error) {
+      reset();
       setIsLoading(false);
     }
   };
@@ -167,31 +190,58 @@ const Catering = () => {
         <div className="inquiry-form__wrapper">
           <p className="inquiry-form-header">Fill an inquiry form!</p>
           <div className="form-container">
-            <form action="">
+            <form onSubmit={handleSubmit(handleForm)} action="">
               <input
                 type="text"
-                value={name}
-                onChange={handleName}
+                // value={name}
+                // onChange={handleName}
                 placeholder="Name"
                 id="contact"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name can not be empty",
+                  },
+                })}
               />
+              {errors.name?.message && (
+                <p className="error-txt">{errors.name.message}</p>
+              )}
               <input
                 className="yellow-out"
                 type="number"
                 id="number"
                 placeholder="Phone Number"
-                value={phone}
-                onChange={handlePhone}
+                // value={phone}
+                // onChange={handlePhone}
+                {...register("phone", {
+                  required: {
+                    value: true,
+                    message: "Phone Number can not be empty",
+                  },
+                })}
               />
+              {errors.phone?.message && (
+                <p className="error-txt">{errors.phone.message}</p>
+              )}
               <div className="form-flex">
                 <div>
                   <input
-                    value={email}
-                    onChange={handleEmail}
+                    // value={email}
+                    // onChange={handleEmail}
                     type="email"
                     placeholder="Email"
                     id="email"
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: " Enter a valid email address",
+                      },
+                    })}
                   />
+                  {errors.email?.message && (
+                    <p className="error-txt">{errors.email.message}</p>
+                  )}
                 </div>
 
                 <button className="date" onClick={showCalenda}>
@@ -348,12 +398,18 @@ const Catering = () => {
                 id=""
                 cols="30"
                 rows="10"
-                value={message}
-                onChange={handleMessage}
+                // value={message}
+                // onChange={handleMessage}
+                {...register("message", {
+                  required: {
+                    // value: true,
+                    // message: " Enter a valid email address",
+                  },
+                })}
               ></textarea>
 
               <div className="cta-send">
-                <div onClick={handleForm} className="bg-lo">
+                <div className="bg-lo">
                   <SendMessage text="SEND A MESSAGE" />
                   {loading && <div className="loader-circle"></div>}
                 </div>
