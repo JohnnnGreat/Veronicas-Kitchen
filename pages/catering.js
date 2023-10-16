@@ -12,7 +12,7 @@ const Catering = () => {
   const [showDList, setShowDList] = useState(false);
   const [food, setFood] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date());
   const [options, setOptions] = useState("Yes");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -363,7 +363,7 @@ const Catering = () => {
           <div className="calender-main">
             <div className="details">
               <h1>
-                Date Order: <span>{String(date.toDateString())}</span>
+                Date Order: <span>{date.toDateString()}</span>
               </h1>
               <button
                 onClick={(e) => {

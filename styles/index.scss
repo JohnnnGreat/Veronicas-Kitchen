@@ -547,8 +547,6 @@ $heroD_txt_clr: #5c6574;
   overflow: hidden;
   position: relative;
   background-color: transparent;
-  width: 100%;
-  justify-content: center;
 
   .explore-link {
     display: flex;
@@ -1867,6 +1865,7 @@ $secondary-color: #666;
 .bg-lo {
   display: flex;
   align-items: center;
+
   gap: 1rem;
 }
 .loader-cta {

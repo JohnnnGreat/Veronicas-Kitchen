@@ -13,7 +13,7 @@ export default async function inquiry(req, res) {
       });
       const mailData = {
         from: req.body.email,
-        to: "TIMOTHY <timothy@macgrouptech.com>",
+        to: "TIMOTHY <johnossai20@gmail.com>",
         subject: `New Message From ${req.body.name}`,
 
         html: `  <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap'); font-family:Poppins, serif</style><div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
