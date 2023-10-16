@@ -28,7 +28,7 @@ import ExFour from "@/public/explore_assets/Frame 8431.png";
 import ExFive from "@/public/explore_assets/Frame 8432.png";
 import Background from "../public/utils_assets/Testimonial.png";
 
-import Carousel from "react-bootstrap/Carousel";
+// import Carousel from "react-bootstrap/Carousel";
 // import ExampleCarouselImage from "components/ExampleCarouselImage";
 
 // import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
