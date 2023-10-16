@@ -26,6 +26,10 @@ $heroD_txt_clr: #5c6574;
       justify-content: center;
       position: absolute;
       bottom: 0;
+
+      @media (max-width: 700px) {
+        bottom: 4rem;
+      }
       .trace-image {
         margin-left: -4rem;
         width: 100px;
@@ -473,7 +477,7 @@ $heroD_txt_clr: #5c6574;
 }
 
 .explore {
-  padding: 3rem 0;
+  padding: 3rem 1rem;
   @media (max-width: 567px) {
     padding: 1rem;
   }
@@ -528,7 +532,11 @@ $heroD_txt_clr: #5c6574;
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1rem !important;
+
+      @media (max-width: 700px) {
+        gap: 2rem !important;
+      }
     }
     .explore-container {
       display: flex;
@@ -649,10 +657,6 @@ $heroD_txt_clr: #5c6574;
     p {
       color: #fff;
       padding: 15px;
-
-      @media (max-width: 567px) {
-        font-size: 18px;
-      }
     }
 
     .rounder {
@@ -665,6 +669,12 @@ $heroD_txt_clr: #5c6574;
       justify-content: center;
       position: absolute;
       right: 1rem;
+
+      i {
+        font-size: 1.5rem;
+        color: #a67c5b;
+        line-height: 1;
+      }
     }
   }
 }
@@ -832,6 +842,11 @@ $heroD_txt_clr: #5c6574;
       position: relative;
       overflow: hidden;
 
+      @media (max-width: 700px) {
+        width: 90%;
+        height: 350px;
+      }
+
       .bg-ov {
         width: 100%;
         height: 100%;
@@ -864,11 +879,11 @@ $heroD_txt_clr: #5c6574;
           grid-template-columns: 70% 30%;
           background-color: #fff;
           margin-top: 1.4rem;
-          border-radius: 20px;
+          border-radius: 15px;
           overflow: hidden;
           width: 600px;
 
-          padding: 0.6rem;
+          padding: 0.4rem;
           @media (max-width: 567px) {
             width: 90%;
             grid-template-columns: 1fr;
@@ -877,7 +892,7 @@ $heroD_txt_clr: #5c6574;
             border: none;
             flex: 1;
             height: 100%;
-            padding: 1rem;
+            padding: 0.7rem;
             outline: none;
             display: flex;
             align-items: center;
@@ -900,6 +915,10 @@ $heroD_txt_clr: #5c6574;
             text-decoration: none;
             font-size: 17px;
             height: 60px;
+
+            &:hover {
+              background: #b88d6c;
+            }
           }
         }
       }
