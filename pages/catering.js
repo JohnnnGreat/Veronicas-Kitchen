@@ -19,6 +19,7 @@ const Catering = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [openCalender, setOpenCalender] = useState(false);
+  const [loading, setIsLoading] = useState(false);
 
   const foodItems = [
     { id: 1, name: "Egusi" },
@@ -106,7 +107,7 @@ const Catering = () => {
   };
   const handleForm = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     try {
       const parseDate = date.toDateString();
       const data = {
@@ -131,15 +132,15 @@ const Catering = () => {
       if (response.status === 500) {
         // message.error("An error Occured");
         toast.error("An error Occured");
-        // setIsLoading(false);
+        setIsLoading(false);
       } else {
         // setSuccess(true);
         toast.success("Message Sent Successfully");
-
+        setIsLoading(false);
         console.log(response);
       }
     } catch (error) {
-      console.log(error);
+      setIsLoading(false);
     }
   };
   return (
@@ -350,9 +351,12 @@ const Catering = () => {
                 value={message}
                 onChange={handleMessage}
               ></textarea>
-              <div onClick={handleForm} className="bg-lo">
-                <SendMessage text="SEND A MESSAGE" />
-                {/* <div className="loader-cta"></div> */}
+
+              <div className="cta-send">
+                <div onClick={handleForm} className="bg-lo">
+                  <SendMessage text="SEND A MESSAGE" />
+                  {loading && <div className="loader-circle"></div>}
+                </div>
               </div>
             </form>
           </div>

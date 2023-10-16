@@ -551,7 +551,7 @@ $heroD_txt_clr: #5c6574;
 
 .exp_btn {
   display: flex;
-  margin-top: 35px;
+  // margin-top: 35px;
   overflow: hidden;
   position: relative;
   background-color: transparent;
@@ -1884,6 +1884,7 @@ $secondary-color: #666;
   align-items: center;
 
   gap: 1rem;
+  margin-top: 35px;
 }
 .loader-cta {
   width: 30px;
@@ -2005,4 +2006,25 @@ $secondary-color: #666;
   .contact {
     font-weight: 800;
   }
+}
+
+.cta-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-catering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-circle {
+  width: 30px !important;
+  height: 30px;
+
+  display: inline-flex;
+  border: 2px solid #d4a37d;
+  border-left-color: transparent;
+  border-radius: 100%;
+  animation: spin 200ms linear infinite;
 }
