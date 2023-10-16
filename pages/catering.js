@@ -6,6 +6,7 @@ import SendMessage from "@/components/SendMessage";
 import Calendar from "react-calendar";
 import toast, { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import Head from "next/head";
 
 const Catering = () => {
   const [numberPeople, setNumberP] = useState(2);
@@ -105,21 +106,6 @@ const Catering = () => {
     setOpenCalender(true);
   };
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePhone = (e) => {
-    setPhone(e.target.value);
-  };
-
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
   const handleForm = async (values) => {
     // e.preventDefault();
     setIsLoading(true);
@@ -168,6 +154,9 @@ const Catering = () => {
   };
   return (
     <>
+      <Head>
+        <title>Catering</title>
+      </Head>
       <Toaster />
       <HeroSection
         title="Catering"
