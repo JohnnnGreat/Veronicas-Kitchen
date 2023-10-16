@@ -860,6 +860,10 @@ $heroD_txt_clr: #5c6574;
   color: #fff;
   margin-top: 5.3rem;
 
+  @media (max-width: 567px) {
+    height: 45vh;
+  }
+
   .download-pdf-container {
     width: 100%;
     display: flex;

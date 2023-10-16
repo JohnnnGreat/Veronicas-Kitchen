@@ -1,10 +1,13 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
+import Head from "next/head";
 
 function OurStory() {
   return (
     <>
-      Hello
+      <Head>
+        <title>Our Story</title>
+      </Head>
       <HeroSection
         title="Our Story"
         desc="Experience our captivating journey. Discover the passion behind our
