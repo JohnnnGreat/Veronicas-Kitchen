@@ -3,6 +3,7 @@ import "@/styles/globals.scss";
 import "@/styles/globals.css";
 import "@/styles/layout.scss";
 import "@/styles/index.scss";
+import "@/styles/calendar.scss";
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import AOS from "aos";

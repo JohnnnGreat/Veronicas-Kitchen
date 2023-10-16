@@ -5,6 +5,7 @@ import Subscribe from "@/components/subscribe";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
+import Head from "next/head";
 
 function Contact() {
   const {
@@ -28,8 +29,6 @@ function Contact() {
     setIsLoading(true);
 
     try {
-      const { name, messagev, email } = value;
-
       const response = await fetch("api/message", {
         method: "POST",
         body: JSON.stringify(value),
@@ -39,24 +38,24 @@ function Contact() {
       });
 
       if (response.status === 500) {
-        // message.error("An error Occured");
         toast.error("An error Occured");
         setIsLoading(false);
       } else {
         setSuccess(true);
         toast.success("Message Sent Successfully");
-        // message.success("Message Sents Successfully");
-        console.log(response);
+
         setIsLoading(false);
       }
     } catch (error) {
-      console.log(error);
       setSuccess(true);
       setIsLoading(false);
     }
   }
   return (
     <>
+      <Head>
+        <title>Contact Us</title>
+      </Head>
       <Toaster />
       <HeroSection
         title="Contact Us"

@@ -303,7 +303,7 @@ $heroD_txt_clr: #5c6574;
           height: 510px;
         }
         .circle {
-          background: linear-gradient(#fdc55e00, #fdc55e, 2%, #ffffff00);
+          background: linear-gradient(#fdc55e, #a67b5b5b 2%, #ffffff00);
           padding-inline-start: 1rem;
           display: flex;
           flex-direction: column;
@@ -937,6 +937,9 @@ $heroD_txt_clr: #5c6574;
   &__wrapper {
     max-width: 70rem;
     margin: auto;
+    @media (max-width: 567px) {
+      padding: 1rem;
+    }
     &__contents {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1921,11 +1924,11 @@ $secondary-color: #666;
 .modal {
   width: 600px;
   background-color: #ffffff;
-  position: absolute;
+
   display: flex;
   flex-direction: column;
   z-index: 100;
-  top: 0;
+
   padding: 1rem;
   border-radius: 10px;
 
@@ -1938,5 +1941,41 @@ $secondary-color: #666;
     display: flex;
     padding: 1rem;
     justify-content: space-between;
+  }
+}
+
+.calender-container {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #000000bd;
+
+  .calender-main {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    h1 {
+      font-size: 25px;
+      color: #a67c5b;
+      font-weight: 700;
+
+      span {
+        font-weight: 500;
+        font-size: 20;
+      }
+    }
+    button {
+      text-decoration: underline;
+    }
   }
 }

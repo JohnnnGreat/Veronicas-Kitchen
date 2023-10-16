@@ -1,0 +1,37 @@
+.react-calendar__month-view__days {
+}
+
+.react-calendar {
+  max-width: 600px;
+  margin: auto;
+
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.react-calendar__viewContainer {
+  margin-top: 1rem;
+}
+.react-calendar__tile {
+  text-align: left;
+  padding: 0.5rem;
+  transition: 300ms ease;
+  &:hover {
+    transition: 300ms ease;
+    background: #a67c5b;
+    color: #fff;
+  }
+}
+
+.react-calendar__navigation {
+  border: 2px solid #a67c5b;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .react-calendar__navigation__arrow {
+    font-size: 30px;
+  }
+}

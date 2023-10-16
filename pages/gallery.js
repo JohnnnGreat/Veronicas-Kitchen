@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
+import Head from "next/head";
 
 //Explore Images
 import ExOne from "@/public/explore_assets/Frame 8428.png";
@@ -12,6 +13,9 @@ import ExFive from "@/public/explore_assets/Frame 8432.png";
 function Gallery() {
   return (
     <>
+      <Head>
+        <title>Gallery | Veronicas Kitchen</title>
+      </Head>
       <HeroSection
         title="Explore the Heaven that is Our Restaurant"
         desc="Explore our restaurant gallery, featuring stunning visuals that showcase our inviting atmosphere, delectable culinary creations, and warm hospitality."

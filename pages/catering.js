@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import Modal from "@/components/ShowList";
 import SendMessage from "@/components/SendMessage";
 import Calendar from "react-calendar";
+import toast, { Toaster } from "react-hot-toast";
 
 const Catering = () => {
   const [numberPeople, setNumberP] = useState(2);
@@ -11,8 +12,13 @@ const Catering = () => {
   const [showDList, setShowDList] = useState(false);
   const [food, setFood] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState("");
   const [options, setOptions] = useState("Yes");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [openCalender, setOpenCalender] = useState(false);
 
   const foodItems = [
     { id: 1, name: "Egusi" },
@@ -23,9 +29,9 @@ const Catering = () => {
     { id: 6, name: "Pepper Soup" },
     { id: 7, name: "Red Stew" },
     { id: 8, name: "Ewa Riro" },
-    { id: 8, name: "Plantains" },
-    { id: 8, name: "Puff Puff" },
-    { id: 8, name: "Yam Porridge" },
+    { id: 9, name: "Plantains" },
+    { id: 10, name: "Puff Puff" },
+    { id: 11, name: "Yam Porridge" },
     // { id: 8, name: "Meat Pies, Suya, Moi Moi" },
   ];
 
@@ -79,14 +85,66 @@ const Catering = () => {
 
   const showCalenda = (e) => {
     e.preventDefault();
+
+    setOpenCalender(true);
   };
 
-  const handleForm = (e) => {
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePhone = (e) => {
+    setPhone(e.target.value);
+  };
+
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+  };
+  const handleForm = async (e) => {
     e.preventDefault();
-    alert("form");
+
+    try {
+      const parseDate = date.toDateString();
+      const data = {
+        name,
+        email,
+        phone,
+        parseDate,
+        numberPeople,
+        options,
+        checkedItems,
+        message,
+      };
+
+      const response = await fetch("api/inquiry", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 500) {
+        // message.error("An error Occured");
+        toast.error("An error Occured");
+        // setIsLoading(false);
+      } else {
+        // setSuccess(true);
+        toast.success("Message Sent Successfully");
+
+        console.log(response);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>
+      <Toaster />
       <HeroSection
         title="Catering"
         desc="Choose from a wide variety of delicious dishes in 4 sizes - half tray, full tray, small cooler, and larger cooler - to feed your guests at any event, big or small. We can also create custom menus and sizes to fit your specific needs."
@@ -109,20 +167,34 @@ const Catering = () => {
           <p className="inquiry-form-header">Fill an inquiry form!</p>
           <div className="form-container">
             <form action="">
-              <input type="text" placeholder="Name" id="contact" />
+              <input
+                type="text"
+                value={name}
+                onChange={handleName}
+                placeholder="Name"
+                id="contact"
+              />
               <input
                 className="yellow-out"
                 type="text"
                 id="number"
                 placeholder="Phone Number"
+                value={phone}
+                onChange={handlePhone}
               />
               <div className="form-flex">
                 <div>
-                  <input type="email" placeholder="Email" id="email" />
+                  <input
+                    value={email}
+                    onChange={handleEmail}
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                  />
                 </div>
 
                 <button className="date" onClick={showCalenda}>
-                  <p>Date Order</p>
+                  <p>{date ? date.toDateString() : "Date Order"}</p>
                   <i>
                     <i class="ri-calendar-2-fill"></i>
                   </i>
@@ -275,16 +347,37 @@ const Catering = () => {
                 id=""
                 cols="30"
                 rows="10"
+                value={message}
+                onChange={handleMessage}
               ></textarea>
-              <div className="bg-lo">
-                <SendMessage onClick={handleForm} text="SEND A MESSAGE" />
+              <div onClick={handleForm} className="bg-lo">
+                <SendMessage text="SEND A MESSAGE" />
                 {/* <div className="loader-cta"></div> */}
               </div>
             </form>
           </div>
         </div>
       </div>
-      <Calendar onChange={setDate} value={date} />
+      {openCalender && (
+        <div className="calender-container">
+          <div className="calender-main">
+            <div className="details">
+              <h1>
+                Date Order: <span>{String(date.toDateString())}</span>
+              </h1>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenCalender(false);
+                }}
+              >
+                Done
+              </button>
+            </div>
+            <Calendar onChange={setDate} value={date} />
+          </div>
+        </div>
+      )}
       {showNav && (
         <div className="modal-container">
           <i

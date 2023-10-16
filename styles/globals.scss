@@ -35,3 +35,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--tertiary);
 }
+
+h1 {
+  @media (max-width: 480px) {
+    line-height: 1;
+  }
+}

@@ -32,7 +32,6 @@ function Footer() {
             <ul className="item__lists">
               <li>Our Story</li>
               <li>Gallery</li>
-              <li>Reservation</li>
               <li>Contact Us</li>
             </ul>
           </div>
