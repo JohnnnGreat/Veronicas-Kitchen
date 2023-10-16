@@ -6,6 +6,7 @@ $heroD_txt_clr: #5c6574;
 .home {
   margin-top: 4.53rem;
   background: $primary_color;
+  padding: 1rem;
 
   overflow: hidden;
   .hero {
@@ -14,9 +15,9 @@ $heroD_txt_clr: #5c6574;
     height: 90vh;
     padding: 1rem;
     position: relative;
-    @media (max-width: 567px) {
+    @media (max-width: 1000px) {
       padding: 1rem;
-      height: auto;
+      height: 1000px;
     }
 
     .trc-container {
@@ -39,10 +40,11 @@ $heroD_txt_clr: #5c6574;
       align-content: center;
       justify-content: center;
 
-      height: 95%;
+      height: 90%;
       @media (max-width: 567px) {
         margin-right: auto;
         margin-left: 0;
+        height: initial;
       }
 
       .nav_menu {
@@ -57,7 +59,7 @@ $heroD_txt_clr: #5c6574;
         position: relative;
         gap: 2rem;
 
-        @media (max-width: 567px) {
+        @media (max-width: 1000px) {
           grid-template-columns: 1fr;
           margin-top: 2rem;
         }
@@ -235,7 +237,7 @@ $heroD_txt_clr: #5c6574;
       max-width: 75rem;
       margin: 0 auto;
 
-      @media (max-width: 567px) {
+      @media (max-width: 800px) {
         max-width: 100%;
         padding: 1rem;
       }
@@ -279,6 +281,12 @@ $heroD_txt_clr: #5c6574;
 
         @media (max-width: 567px) {
           grid-template-columns: 1fr;
+          max-width: 100%;
+          gap: 2.5rem;
+        }
+
+        @media (min-width: 567px) and (max-width: 1000px) {
+          grid-template-columns: repeat(2, 1fr);
           max-width: 100%;
         }
 
@@ -970,12 +978,13 @@ $heroD_txt_clr: #5c6574;
 .about {
   overflow: hidden;
   padding: 3rem 0;
+  padding: 1rem;
   &__wrapper {
     max-width: 70rem;
     margin: auto;
 
     .text {
-      font-size: 22px;
+      font-size: 18px;
       color: #5c6574;
       text-align: center;
       margin-top: 1.4rem;
@@ -1984,5 +1993,16 @@ $secondary-color: #666;
     button {
       text-decoration: underline;
     }
+  }
+}
+
+.custom-message {
+  max-width: 600px;
+  margin: auto;
+  border-left: 2px solid #8f8462;
+  padding: 0.8rem;
+
+  .contact {
+    font-weight: 800;
   }
 }
