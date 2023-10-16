@@ -36,10 +36,6 @@ import Background from "../public/utils_assets/Testimonial.png";
 
 import Preloader from "@/components/Preloader";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
-// import Swiper from "swiper";
-// import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/swiper-bundle.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
