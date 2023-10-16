@@ -15,7 +15,7 @@ const Catering = () => {
   const [food, setFood] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
   const [date, setDate] = useState(new Date());
-  const [options, setOptions] = useState("Yes");
+  const [options, setOptions] = useState("Delivery");
 
   const [openCalender, setOpenCalender] = useState(false);
   const [loading, setIsLoading] = useState(false);
@@ -146,6 +146,7 @@ const Catering = () => {
         setDate(new Date());
         setCheckedItems([]);
         setNumberP(2);
+        setOptions("Delivery");
       }
     } catch (error) {
       reset();
