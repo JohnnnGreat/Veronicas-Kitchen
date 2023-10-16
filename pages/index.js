@@ -384,14 +384,15 @@ export default function Home() {
                       <div className="testimonial-content">
                         <i class="ri-double-quotes-l"></i>
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Distinctio expedita impedit nesciunt inventore
-                          illo, est eius voluptas facere eligendi earum veniam
-                          cupiditate quos dignissimos sequi maiores quod
-                          obcaecati laborum suscipit.
+                          Absolutely blown away by the delectable flavors and
+                          impeccable service at Veronica&apos;s Kitchen. Their
+                          Nigerian cuisine took me on a culinary journey back to
+                          my roots, leaving me craving more. A must-visit for
+                          anyone seeking an authentic and unforgettable dining
+                          experience!
                         </p>
 
-                        <h1>John Doe</h1>
+                        <h1>- Paul Ogundare</h1>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -401,14 +402,32 @@ export default function Home() {
                       <div className="testimonial-content">
                         <i class="ri-double-quotes-l"></i>
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Distinctio expedita impedit nesciunt inventore
-                          illo, est eius voluptas facere eligendi earum veniam
-                          cupiditate quos dignissimos sequi maiores quod
-                          obcaecati laborum suscipit.
+                          I can&apos;t get enough of the mouthwatering dishes at
+                          Veronica&apos;s Kitchen. From the perfectly seasoned
+                          Jollof rice to the amazing soups, every bite is a
+                          celebration of Nigerian flavors. The cozy ambiance and
+                          friendly staff make it an all-around remarkable dining
+                          destination.
                         </p>
 
-                        <h1>John Doe</h1>
+                        <h1>- Rosemary Ikechukwu</h1>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="swiper">
+                    <div className="testimonials__card">
+                      <div className="testimonial-content">
+                        <i class="ri-double-quotes-l"></i>
+                        <p>
+                          Finding Veronica&apos;s Kitchen. was like discovering
+                          a hidden gem. The rich aromas and vibrant colors of
+                          their Nigerian dishes were a feast for the senses. The
+                          attention to detail and exceptional flavors left me
+                          speechless. A culinary haven for those seeking an
+                          exceptional taste of Nigeria!
+                        </p>
+
+                        <h1>- Abdulsalam Kamaldeen</h1>
                       </div>
                     </div>
                   </SwiperSlide>
