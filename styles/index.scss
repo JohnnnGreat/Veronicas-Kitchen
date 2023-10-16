@@ -537,6 +537,7 @@ $heroD_txt_clr: #5c6574;
       align-items: center;
       justify-content: center;
       text-decoration: none;
+      margin-top: 35px;
 
       .link {
         text-decoration: none;
@@ -708,13 +709,15 @@ $heroD_txt_clr: #5c6574;
   &__wrapper {
     max-width: 70rem;
     margin: auto;
-    position: relative;
+
     z-index: 10;
     @media (max-width: 567px) {
       padding: 1rem;
     }
     &__header {
       color: #fff;
+      position: relative;
+      z-index: 20;
 
       h1 {
         font-weight: 800;
@@ -733,24 +736,73 @@ $heroD_txt_clr: #5c6574;
       align-items: center;
       justify-content: center;
       margin-top: 2rem;
+      .swiper-pagination {
+        position: absolute !important;
+        bottom: 1rem !important;
+        z-index: 300 !important;
+      }
 
       .swiper {
-        width: 800px;
-        height: 400px;
+        position: unset !important;
+      }
+      .swiper-pagination-bullet {
+        background-color: rgb(255, 255, 255) !important;
+        width: 40px;
+        height: 6px;
+        border-radius: 2px;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #ffb77e !important;
+      }
+
+      .swiper-wrapper {
+        position: unset !important;
+      }
+      .swiper-slide {
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
-        background-color: red !important;
-        @media (max-width: 567px) {
-          width: 95%;
-        }
+        position: unset !important;
       }
       .testimonials__card {
-        width: 100%;
-        height: 300px;
+        width: 700px;
+        height: 350px;
         background-color: #fff;
         border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        @media (max-width: 700px) {
+          width: 90%;
+        }
+        .testimonial-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          i {
+            font-size: 5rem;
+            color: #a67c5b;
+            line-height: 1;
+          }
+
+          p {
+            max-width: 500px;
+            color: #5c6574;
+            text-align: center;
+          }
+
+          h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333333;
+            margin-top: 1rem;
+          }
+        }
       }
     }
   }

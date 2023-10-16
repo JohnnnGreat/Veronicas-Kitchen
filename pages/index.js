@@ -35,6 +35,27 @@ import Carousel from "react-bootstrap/Carousel";
 // import SwiperCore from "swiper";
 
 import Preloader from "@/components/Preloader";
+import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
+// import Swiper from "swiper";
+// import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/swiper-bundle.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  EffectCube,
+  Autoplay,
+} from "swiper/modules";
+
+import SwiperCore from "swiper";
+import "swiper/swiper-bundle.css";
+SwiperCore.use([Autoplay]);
+// install Swiper modules
+// SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,7 +91,17 @@ export default function Home() {
       clearInterval(interval);
     };
   }, []);
-
+  const swiperParams = {
+    spaceBetween: 30,
+    slidesPerView: 1,
+    navigation: true,
+    pagination: {
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+    },
+  };
   return (
     <>
       <Head>
@@ -336,63 +367,81 @@ export default function Home() {
                 <h1>Discover What Our Ecstatic Customers Have to Say</h1>
               </div>
               <div className="testimonials__wrapper__contents">
-                {/* <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={0}
-              slidesPerView={1}
-              znavigation={false}
-              scrollbar={{ draggable: true }}
-              pagination={{
-                clickable: true,
-                renderBullet: (index, className) =>
-                  `<span class="${className}" style="background-color: green !important;"></span>`,
-              }}
-            >
-              <SwiperSlide className="swiper">
-                <div className="testimonials__card">
-                  <h1>Card One</h1>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="testimonials__card">
-                  <h1>Card One</h1>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="testimonials__card">
-                  <h1>Card One</h1>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="testimonials__card">
-                  <h1>Card One</h1>
-                </div>
-              </SwiperSlide>
-            </Swiper> */}
+                <Swiper
+                  spaceBetween={50}
+                  slidesPerView={1}
+                  navigation={false}
+                  pagination={{ clickable: true }}
+                  scrollbar={false}
+                  onSlideChange={() => console.log("slide change")}
+                  onSwiper={(swiper) => console.log(swiper)}
+                  autoplay={{ delay: 3000 }}
+                  modules={[
+                    Navigation,
+                    Pagination,
+                    Scrollbar,
+                    A11y,
+                    EffectCube,
+                  ]}
+                >
+                  <SwiperSlide className="swiper">
+                    <div className="testimonials__card">
+                      <div className="testimonial-content">
+                        <i class="ri-double-quotes-l"></i>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Distinctio expedita impedit nesciunt inventore
+                          illo, est eius voluptas facere eligendi earum veniam
+                          cupiditate quos dignissimos sequi maiores quod
+                          obcaecati laborum suscipit.
+                        </p>
+
+                        <h1>John Doe</h1>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+
+                  <SwiperSlide className="swiper">
+                    <div className="testimonials__card">
+                      <div className="testimonial-content">
+                        <i class="ri-double-quotes-l"></i>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Distinctio expedita impedit nesciunt inventore
+                          illo, est eius voluptas facere eligendi earum veniam
+                          cupiditate quos dignissimos sequi maiores quod
+                          obcaecati laborum suscipit.
+                        </p>
+
+                        <h1>John Doe</h1>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
                 {/* <MDBCarousel showControls dealy={3000} showIndicators>
-              <MDBCarouselItem
-                className="swiper"
-                itemId={1}
-                src="https://mdbootstrap.com/img/new/slides/041.jpg"
-                alt="..."
-              >
-                <div className="c-content">1</div>
-              </MDBCarouselItem>
-              <MDBCarouselItem
-                className="swiper"
-                itemId={2}
-                src="https://mdbootstrap.com/img/new/slides/042.jpg"
-                alt="..."
-              >
-                <div>2</div>
-              </MDBCarouselItem>
-              <MDBCarouselItem
-                className="swiper"
-                itemId={3}
-                src="https://mdbootstrap.com/img/new/slides/043.jpg"
-                alt="..."
-              />
-            </MDBCarousel> */}
+                  <MDBCarouselItem
+                    className="swiper"
+                    itemId={1}
+                    src="https://mdbootstrap.com/img/new/slides/041.jpg"
+                    alt="..."
+                  >
+                    <div className="c-content">1</div>
+                  </MDBCarouselItem>
+                  <MDBCarouselItem
+                    className="swiper"
+                    itemId={2}
+                    src="https://mdbootstrap.com/img/new/slides/042.jpg"
+                    alt="..."
+                  >
+                    <div>2</div>
+                  </MDBCarouselItem>
+                  <MDBCarouselItem
+                    className="swiper"
+                    itemId={3}
+                    src="https://mdbootstrap.com/img/new/slides/043.jpg"
+                    alt="..."
+                  />
+                </MDBCarousel> */}
               </div>
             </div>
           </div>
