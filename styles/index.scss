@@ -548,6 +548,10 @@ $heroD_txt_clr: #5c6574;
   position: relative;
   background-color: transparent;
 
+  @media (max-width: 567px) {
+    width: 100%;
+  }
+
   .explore-link {
     display: flex;
     align-items: center;
