@@ -176,7 +176,7 @@ const Catering = () => {
               />
               <input
                 className="yellow-out"
-                type="text"
+                type="number"
                 id="number"
                 placeholder="Phone Number"
                 value={phone}
