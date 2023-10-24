@@ -12,6 +12,7 @@ function Contact() {
     handleSubmit,
     register,
     formState: { errors, isValid },
+    reset,
   } = useForm({
     defaultValues: {
       name: "",
@@ -40,15 +41,18 @@ function Contact() {
       if (response.status === 500) {
         toast.error("An error Occured");
         setIsLoading(false);
+        reset();
       } else {
         setSuccess(true);
         toast.success("Message Sent Successfully");
 
         setIsLoading(false);
+        reset();
       }
     } catch (error) {
       setSuccess(true);
       setIsLoading(false);
+      reset();
     }
   }
   return (
