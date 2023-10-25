@@ -13,7 +13,7 @@ export default async function contact(req, res) {
       });
       const mailData = {
         from: req.body.email,
-        to: "JOHN OSSAI <johnossai20@gmail.com>",
+        to: "VERONICAS KITCHEN <theveronicaskitchen@gmail.com>",
         subject: `Message From ${req.body.name}`,
 
         html: `   <div style="font-family: Poppins, serif">
