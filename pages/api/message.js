@@ -2,8 +2,6 @@
 import nodemailer from "nodemailer";
 
 export default async function message(req, res) {
-  console.log(req.body);
-  console.log(process.env.USER_EMAIL);
   try {
     if (req.method === "POST") {
       const transporter = nodemailer.createTransport({
