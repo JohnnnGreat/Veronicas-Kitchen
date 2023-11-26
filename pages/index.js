@@ -129,9 +129,12 @@ export default function Home() {
         />
       </Head>
       {isLoading ? (
+        // // Preloader Section
         <Preloader />
       ) : (
+        // Home Section
         <div className="home">
+          {/* Hero Section */}
           <div className="hero">
             <div className="trc-container">
               <Image
@@ -140,7 +143,6 @@ export default function Home() {
                 alt="traced image for the hero"
               ></Image>
             </div>
-
             <div className="hero__wrapper">
               <div className="hero_content">
                 <div className="hero__first">
@@ -213,6 +215,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* Special  Offer Section*/}
           <div className="special">
             <div className="special__wrapper">
               <div className="special__wrapper__header">
@@ -262,6 +265,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Why choose Us */}
           <div className="why-us">
             <div className="why-us__wrapper">
               <div className="why-us__wrapper__header">
@@ -304,6 +309,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Explore Section */}
           <div className="explore" data-aos="zoom-in" data-aos-duration="1000">
             <div className="explore__wrapper">
               <div className="explore__wrapper__header">
@@ -354,8 +361,9 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Testimonial Section */}
           <div className="testimonials">
-            {/* <div className="overlay"></div> */}
             <Image src={Background} alt="overlay" className="bg-ov"></Image>
             <div className="testimonials__wrapper">
               <div className="testimonials__wrapper__header">
@@ -432,30 +440,6 @@ export default function Home() {
                     </div>
                   </SwiperSlide>
                 </Swiper>
-                {/* <MDBCarousel showControls dealy={3000} showIndicators>
-                  <MDBCarouselItem
-                    className="swiper"
-                    itemId={1}
-                    src="https://mdbootstrap.com/img/new/slides/041.jpg"
-                    alt="..."
-                  >
-                    <div className="c-content">1</div>
-                  </MDBCarouselItem>
-                  <MDBCarouselItem
-                    className="swiper"
-                    itemId={2}
-                    src="https://mdbootstrap.com/img/new/slides/042.jpg"
-                    alt="..."
-                  >
-                    <div>2</div>
-                  </MDBCarouselItem>
-                  <MDBCarouselItem
-                    className="swiper"
-                    itemId={3}
-                    src="https://mdbootstrap.com/img/new/slides/043.jpg"
-                    alt="..."
-                  />
-                </MDBCarousel> */}
               </div>
             </div>
           </div>

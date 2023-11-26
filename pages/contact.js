@@ -154,7 +154,7 @@ function Contact() {
                 Phone No.: <span>+3106734890</span>{" "}
               </div>
               <div className="contact-email">
-                Email Address: <span>theveronicaskitchen@gmail.com</span>
+                Email Address: <span>contact@veronicas-kitchen.com</span>
               </div>
             </div>
           </div>

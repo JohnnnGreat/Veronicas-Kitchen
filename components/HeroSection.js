@@ -7,7 +7,7 @@ function HeroSection({ title, desc, children }) {
         <div className="hero-default__wrapper__content">
           <h1 className="hero-d-title">{title}</h1>
           <p className="hero-d-desc">{desc}</p>
-          {children && <>{children}</>}
+          <p className="children">{children && <>{children}</>}</p>
         </div>
       </div>
     </div>

@@ -990,7 +990,7 @@ $heroD_txt_clr: #5c6574;
     position: relative;
     z-index: 1;
     margin-top: -1rem;
-
+    font-size: 20px;
     @media (max-width: 567px) {
       flex-wrap: wrap;
     }
@@ -999,10 +999,10 @@ $heroD_txt_clr: #5c6574;
       color: #fff;
       text-decoration: none;
       display: inline-block;
-      margin-left: 0.5rem;
+      margin-left: 0.1rem;
       text-decoration: underline;
-      padding: 0.4rem 0.9rem;
-      font-size: 17px;
+      padding: 0.4rem 0.5rem;
+      font-size: 20px;
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -1058,7 +1058,7 @@ $heroD_txt_clr: #5c6574;
     }
 
     .hero-d-desc {
-      font-size: 18px;
+      font-size: 20px;
 
       max-width: 1100px;
       margin: auto;

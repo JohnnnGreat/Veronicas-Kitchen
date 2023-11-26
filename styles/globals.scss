@@ -41,3 +41,52 @@ h1 {
     line-height: 1;
   }
 }
+
+.custom_container {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000098;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+
+  i {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  form {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    width: 500px;
+    display: flex;
+    gap: 1rem;
+    @media (max-width: 567px) {
+      width: 80%;
+    }
+
+    input {
+      outline: none;
+      border-bottom: 1px solid gray;
+      padding: 0.7rem 0;
+      flex-grow: 1;
+    }
+
+    button {
+      background-color: #a67c5b;
+      padding: 0.3rem 1.6rem;
+      color: #fff;
+      border-radius: 3px;
+    }
+  }
+}

@@ -82,7 +82,7 @@ export default async function message(req, res) {
                     <strong>Email:</strong> ${req.body.email}<br>
                 </div>
                 <p><strong>Message:</strong> ${req.body.messagev}</p>
-                <div><img src="https://midwest-jack-greens-main-timothy-macgrouptech.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.c8df4b2a.png&w=256&q=75" alt="Logo"></div>
+                <div><img src="https://www.veronicas-kitchen.com/_next/static/media/preloaderLogo.d3f83a66.svg" alt="Logo"></div>
             </div>
         </body>
         

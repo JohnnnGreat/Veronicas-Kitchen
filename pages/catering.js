@@ -9,17 +9,29 @@ import { useForm } from "react-hook-form";
 import Head from "next/head";
 
 const Catering = () => {
-  const [numberPeople, setNumberP] = useState(2);
+  const [numberPeople, setNumberP] = useState(10);
   const [showList, setShowList] = useState(false);
   const [showDList, setShowDList] = useState(false);
   const [food, setFood] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);
   const [date, setDate] = useState(new Date());
   const [options, setOptions] = useState("Delivery");
-
+  const [custom, setCustom] = useState(false);
   const [openCalender, setOpenCalender] = useState(false);
   const [loading, setIsLoading] = useState(false);
+  const [customValue, setCustomValue] = useState("");
 
+  const handleCustomValue = (e) => {
+    setCustomValue(e.target.value);
+  };
+
+  const handleCustomSubmit = (e) => {
+    e.preventDefault();
+    setCustom(false);
+    setNumberP(customValue);
+  };
+
+  // List of Food Items
   const foodItems = [
     { id: 1, name: "Egusi" },
     { id: 2, name: "Gbegiri" },
@@ -32,10 +44,9 @@ const Catering = () => {
     { id: 9, name: "Plantains" },
     { id: 10, name: "Puff Puff" },
     { id: 11, name: "Yam Porridge" },
-    // { id: 8, name: "Meat Pies, Suya, Moi Moi" },
   ];
 
-  //react handleForm to process the form inputs validation
+  // Handle form inputs
   const {
     handleSubmit,
     register,
@@ -62,6 +73,7 @@ const Catering = () => {
     setShowDList(!showDList);
   };
 
+  // Set the number of People
   const setNumberPeople = (number) => {
     // setNumber(number);
     setNumberP(number);
@@ -70,15 +82,17 @@ const Catering = () => {
   useEffect(() => {
     console.log(showNav);
   });
+
+  // Foodlist Toggle
   const showFoodList = (e) => {
     e.preventDefault();
     setShowNav(true);
   };
 
-  const handleCheck = (value) => {
-    const newArr = foodArr.push(value);
-    setFoods(newArr);
-  };
+  // const handleCheck = (value) => {
+  //   const newArr = foodArr.push(value);
+  //   setFoods(newArr);
+  // };
 
   useEffect(() => {
     console.log(checkedItems);
@@ -109,7 +123,7 @@ const Catering = () => {
   const handleForm = async (values) => {
     // e.preventDefault();
     setIsLoading(true);
-    console.log(values);
+
     const { name, email, phone, message } = values;
     try {
       const parseDate = date.toDateString();
@@ -141,7 +155,7 @@ const Catering = () => {
         // setSuccess(true);
         toast.success("Message Sent Successfully");
         setIsLoading(false);
-        console.log(response);
+
         reset();
         setDate(new Date());
         setCheckedItems([]);
@@ -163,7 +177,7 @@ const Catering = () => {
         title="Catering"
         desc="Choose from a wide variety of delicious dishes in 4 sizes - half tray, full tray, small cooler, and larger cooler - to feed your guests at any event, big or small. We can also create custom menus and sizes to fit your specific needs."
       >
-        <br></br>
+        <br />
         <div className="download-pdf-container">
           You can as well
           <a
@@ -243,14 +257,6 @@ const Catering = () => {
                 </button>
               </div>
               <div className="form-flex">
-                {/* <div>
-                  <label htmlFor="numberPeople">Number of People</label>
-                  <input
-                    placeholder="eg. 2, 4"
-                    type="number"
-                    id="numberPeople"
-                  />
-                </div> */}
                 <div className="m-container">
                   <div className="first-container" onClick={showOptions}>
                     <i class="ri-user-fill"></i>
@@ -269,57 +275,78 @@ const Catering = () => {
                           <button
                             onClick={(e) => {
                               e.preventDefault();
-                              setNumberPeople(3);
+                              setNumberPeople(10);
                             }}
                           >
-                            3 People
+                            10 People
                           </button>
                         </li>
                         <li>
                           <button
                             onClick={(e) => {
                               e.preventDefault();
-                              setNumberPeople(4);
+                              setNumberPeople(20);
                             }}
                           >
-                            4 People
+                            20 People
                           </button>
                         </li>
                         <li>
                           <button
                             onClick={(e) => {
                               e.preventDefault();
-                              setNumberPeople(5);
+                              setNumberPeople(30);
                             }}
                           >
-                            5 People
+                            30 People
                           </button>
                         </li>
                         <li>
                           <button
                             onClick={(e) => {
                               e.preventDefault();
-                              setNumberPeople(6);
+                              setNumberPeople(40);
                             }}
                           >
-                            6 People
+                            40 People
                           </button>
                         </li>
                         <li>
                           <button
                             onClick={(e) => {
                               e.preventDefault();
-                              setNumberPeople(7);
+                              setNumberPeople(50);
                             }}
                           >
-                            7 People
+                            50 People
                           </button>
                         </li>
                         <li>
                           <button
                             onClick={(e) => {
                               e.preventDefault();
-                              setNumberPeople(7);
+                              setNumberPeople(60);
+                            }}
+                          >
+                            100 People
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setNumberPeople(60);
+                            }}
+                          >
+                            200 People
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setNumberPeople(60);
+                              setCustom(true);
                             }}
                           >
                             Custom
@@ -329,6 +356,7 @@ const Catering = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="delivery" onClick={showDOptions}>
                   <i class="ri-user-fill"></i>
                   <p>{options}</p>
@@ -389,13 +417,8 @@ const Catering = () => {
                 id=""
                 cols="30"
                 rows="10"
-                // value={message}
-                // onChange={handleMessage}
                 {...register("message", {
-                  required: {
-                    // value: true,
-                    // message: " Enter a valid email address",
-                  },
+                  required: {},
                 })}
               ></textarea>
 
@@ -409,6 +432,25 @@ const Catering = () => {
           </div>
         </div>
       </div>
+      {custom && (
+        <div className="custom_container">
+          <i
+            class="ri-close-line"
+            onClick={() => {
+              setCustom(false);
+            }}
+          ></i>
+          <form onSubmit={handleCustomSubmit}>
+            <input
+              type="text"
+              value={customValue}
+              onChange={handleCustomValue}
+              placeholder="Enter a custom number"
+            />
+            <button>Enter</button>
+          </form>
+        </div>
+      )}
       {openCalender && (
         <div className="calender-container">
           <div className="calender-main">
@@ -445,11 +487,6 @@ const Catering = () => {
                   type="checkbox"
                   checked={checkedItems.includes(item.name)}
                   onChange={() => handleCheckboxChange(item.name)}
-                  // onChange={(e) => {
-                  //   if (e.target.checked) {
-                  //     handleCheck(item.name);
-                  //   }
-                  // }}
                 />
               </div>
             ))}
