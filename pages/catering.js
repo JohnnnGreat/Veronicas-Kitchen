@@ -442,7 +442,8 @@ const Catering = () => {
           ></i>
           <form onSubmit={handleCustomSubmit}>
             <input
-              type="text"
+              type="number"
+              required
               value={customValue}
               onChange={handleCustomValue}
               placeholder="Enter a custom number"
