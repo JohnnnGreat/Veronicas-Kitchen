@@ -9,15 +9,15 @@ function Footer() {
           <div className="item">
             <h1 className="item__header">OPENING HOURS</h1>
             <ul className="item__lists">
-              <li>Monday - Friday</li>
-              <li>8:00 am to 9:00 pm</li>
+              <li>Monday - Saturday</li>
+              <li>11:00 am to 9:00 pm</li>
             </ul>
           </div>
           <div className="item">
             <br />
             <ul className="item__lists mt">
-              <li>Saturday</li>
-              <li>8:00 am to 9:00 pm</li>
+              <li>Sunday</li>
+              <li>11:00 am to 7:00 pm</li>
             </ul>
           </div>
           <div className="item">

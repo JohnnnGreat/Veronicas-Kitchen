@@ -82,6 +82,7 @@ export default async function message(req, res) {
                     <strong>Email:</strong> ${req.body.email}<br>
                 </div>
                 <p><strong>Message:</strong> ${req.body.messagev}</p>
+                <a href="mailto:${req.body.email}" style="display: inline-block; padding: 10px 20px; background-color: #a67c5b; color: #fff; text-decoration: none; border-radius: 5px;">Reply Mail</a>
                 <div><img src="https://www.veronicas-kitchen.com/_next/static/media/preloaderLogo.d3f83a66.svg" alt="Logo"></div>
             </div>
         </body>

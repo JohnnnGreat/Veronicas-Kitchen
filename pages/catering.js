@@ -494,7 +494,7 @@ const Catering = () => {
           </div>
         </div>
       )}
-      <div className="custom-message">
+      {/* <div className="custom-message">
         <p>
           For more custom inquiry, you can contact us, via our{" "}
           <span>
@@ -503,7 +503,7 @@ const Catering = () => {
             </Link>
           </span>
         </p>
-      </div>
+      </div> */}
     </>
   );
 };
