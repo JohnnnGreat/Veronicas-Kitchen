@@ -1,10 +1,26 @@
 $max_width: 70rem;
 
+.notification {
+  width: 100%;
+  text-align: center;
+  background: #a67c5b;
+  color: #fffdfc;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  div {
+    display: flex;
+    gap: 0.3rem;
+    margin-left: 0.6rem;
+  }
+}
 .header {
   width: 100%;
   position: fixed;
-  height: 5rem;
-  padding: 0 1rem;
+
   top: 0;
   background-color: #ffffff;
   z-index: 100;
@@ -12,8 +28,9 @@ $max_width: 70rem;
   &__wrapper {
     max-width: $max-width;
     margin: 0 auto;
-    height: 100%;
 
+    padding: 0 1rem;
+    height: 5rem;
     .close_nav {
       position: absolute;
       top: 1rem;
@@ -51,7 +68,7 @@ $max_width: 70rem;
 
         width: 100%;
         left: 0;
-        top: 2rem;
+        top: 3rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -234,4 +251,13 @@ $max_width: 70rem;
       }
     }
   }
+}
+
+.close_not {
+  position: absolute;
+  right: 1rem;
+}
+
+.cln {
+  display: none;
 }

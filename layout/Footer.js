@@ -20,13 +20,13 @@ function Footer() {
               <li>11:00 am to 7:00 pm</li>
             </ul>
           </div>
-          <div className="item">
+          {/* <div className="item">
             <br />
             <ul className="item__lists mt">
               <li>SUNDAY</li>
               <li>CLOSED</li>
             </ul>
-          </div>
+          </div> */}
           <div className="item">
             <h1 className="item__header">NAVIGATION</h1>
             <ul className="item__lists">
@@ -57,7 +57,10 @@ function Footer() {
                 </Link>
               </div>
               <div>
-                <Link href="">
+                <Link
+                  href="https://www.instagram.com/veronicaskitchenla/"
+                  target="_blank"
+                >
                   {" "}
                   <i class="ri-instagram-line"></i>
                 </Link>
