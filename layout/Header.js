@@ -61,7 +61,7 @@ const Header = () => {
   return (
     //Header section
     <header className="header">
-      {timeRemaining.days >= 0 && (
+      {timeRemaining.minutes >= 0 && (
         <div className={`notification ${closeNotification && "cln"}`}>
           <Image
             src={CloseBtnNot}

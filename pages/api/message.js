@@ -2,21 +2,21 @@
 import nodemailer from "nodemailer";
 
 export default async function message(req, res) {
-  try {
-    if (req.method === "POST") {
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.USER_EMAIL,
-          pass: process.env.USER_PASSWORD,
-        },
-      });
-      const mailData = {
-        from: `Veronicas Kitchen New Message <${req.body.email}>`,
-        to: "VERONICAS KITCHEN <theveronicaskitchen@gmail.com>",
-        subject: `Message From ${req.body.name}`,
+   try {
+      if (req.method === "POST") {
+         const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+               user: process.env.USER_EMAIL,
+               pass: process.env.USER_PASSWORD,
+            },
+         });
+         const mailData = {
+            from: `Veronicas Kitchen New Message <${req.body.email}>`,
+            to: "VERONICAS KITCHEN <johnossai20@gmail.com>",
+            subject: `Message From ${req.body.name}`,
 
-        html: ` <!DOCTYPE html>
+            html: ` <!DOCTYPE html>
         <html lang="en">
         
         <head>
@@ -88,17 +88,15 @@ export default async function message(req, res) {
         </body>
         
         </html>`,
-      };
+         };
 
-      await transporter.sendMail(mailData);
+         await transporter.sendMail(mailData);
 
-      return res.status(200).json({ success: true });
-    }
-  } catch (error) {
-    console.error(error);
-    return res
-      .status(500)
-      .json({ success: false, error: "Error sending email" });
-  }
-  return res.status(400).json({ message: "Bad Request" });
+         return res.status(200).json({ success: true });
+      }
+   } catch (error) {
+      console.error(error);
+      return res.status(500).json({ success: false, error: "Error sending email" });
+   }
+   return res.status(400).json({ message: "Bad Request" });
 }
